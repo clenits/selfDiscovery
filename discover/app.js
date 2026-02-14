@@ -276,9 +276,21 @@ const routes = [
   { pattern: "*", id: "not-found" },
 ];
 
+function canonicalizeHomeUrl(path) {
+  if (path !== "/") {
+    return;
+  }
+
+  if (window.location.hash === "#/" || window.location.hash === "#") {
+    const cleanUrl = `${window.location.pathname}${window.location.search}`;
+    window.history.replaceState(null, "", cleanUrl);
+  }
+}
+
 const router = new Router({
   routes,
   onRouteChange: async ({ route, path, query, params }) => {
+    canonicalizeHomeUrl(path);
     await ensureRegistry(appState.locale);
     markActiveNav(path);
 
