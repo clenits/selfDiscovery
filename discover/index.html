@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Self Discovery Lab</title>
+    <meta
+      name="description"
+      content="Learn about yourself through offline-friendly quizzes, local results, and shareable cards."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Self Discovery Lab" />
+    <meta
+      property="og:description"
+      content="A place to learn about yourself through data-driven tests."
+    />
+    <meta property="og:url" content="./" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Skip to content</a>
+
+    <header class="app-header">
+      <div class="brand-wrap">
+        <a class="brand" href="#/">Self Discovery Lab</a>
+      </div>
+      <nav class="top-nav" aria-label="Section">
+        <a href="#/">Home</a>
+        <a href="#/tests">Tests</a>
+        <a href="#/profile">My Profile</a>
+      </nav>
+      <button
+        id="theme-toggle"
+        class="ui-toggle"
+        type="button"
+        aria-pressed="false"
+        aria-label="Toggle dark mode"
+      >
+        Theme
+      </button>
+    </header>
+
+    <main id="app" tabindex="-1" aria-live="polite">
+      <section class="card pe-fallback">
+        <h1>Self Discovery Lab</h1>
+        <p>
+          This section needs JavaScript enabled for interactive quizzes. Your data
+          stays on your device in local storage.
+        </p>
+        <p>
+          If scripts fail to load, refresh once while online to cache files for
+          offline use.
+        </p>
+        <p><a class="ui-button" href="#/tests">Open available tests</a></p>
+      </section>
+      <noscript>
+        <section class="card">
+          <h2>JavaScript Required</h2>
+          <p>
+            Interactive tests require JavaScript. Enable it to run quizzes and
+            save your local profile.
+          </p>
+        </section>
+      </noscript>
+    </main>
+
+    <footer class="app-footer">
+      <small>Local-only storage. No account. No PII collection.</small>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
