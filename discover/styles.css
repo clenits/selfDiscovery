@@ -185,6 +185,13 @@ main,
   border-color: color-mix(in srgb, var(--accent) 46%, transparent);
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
 .card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
@@ -237,7 +244,8 @@ p {
 
 .ui-button,
 .ui-link-button,
-.ui-toggle {
+.ui-toggle,
+.ui-select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -256,13 +264,15 @@ p {
 
 .ui-button:hover,
 .ui-link-button:hover,
-.ui-toggle:hover {
+.ui-toggle:hover,
+.ui-select:hover {
   background: color-mix(in srgb, var(--accent-soft) 72%, var(--surface) 28%);
 }
 
 .ui-button:focus-visible,
 .ui-link-button:focus-visible,
 .ui-toggle:focus-visible,
+.ui-select:focus-visible,
 .radio-item:focus-within,
 a:focus-visible,
 input:focus-visible {
@@ -279,6 +289,22 @@ input:focus-visible {
 .ui-button[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.ui-select {
+  min-width: 110px;
+  appearance: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .row-actions {
@@ -453,6 +479,10 @@ code.inline {
 
   .top-nav {
     justify-content: center;
+  }
+
+  .header-controls {
+    justify-content: flex-end;
   }
 
   .surface-grid.two {

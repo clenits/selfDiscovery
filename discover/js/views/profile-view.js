@@ -2,24 +2,23 @@ import { Button, Card } from "../lib/components.js";
 import { el } from "../lib/dom.js";
 import { clearResults, listResults, latestResultsByQuiz } from "../lib/storage.js";
 
-function formatDate(iso) {
+function formatDate(iso, locale) {
   try {
-    return new Date(iso).toLocaleString();
+    return new Date(iso).toLocaleString(locale);
   } catch {
     return iso;
   }
 }
 
-export function renderProfileView({ registry, refresh }) {
+export function renderProfileView({ registry, locale, t, refresh }) {
   const allResults = listResults();
   const latestMap = latestResultsByQuiz();
 
   if (!allResults.length) {
     return Card({
-      title: "My Profile",
-      description:
-        "No saved results yet. Complete a test and your latest results will appear here.",
-      children: [Button({ label: "Browse Tests", href: "#/tests", variant: "primary" })],
+      title: t("profile.title"),
+      description: t("profile.emptyDescription"),
+      children: [Button({ label: t("profile.browseTests"), href: "#/tests", variant: "primary" })],
     });
   }
 
@@ -36,17 +35,20 @@ export function renderProfileView({ registry, refresh }) {
         children: [
           el("p", {
             className: "quiet",
-            text: `Confidence ${latest.confidencePercent}% · ${formatDate(latest.takenAt)}`,
+            text: t("profile.confidenceAt", {
+              confidence: latest.confidencePercent,
+              date: formatDate(latest.takenAt, locale),
+            }),
           }),
-          Button({ label: "Retake", href: `#/quiz/${test.id}` }),
+          Button({ label: t("profile.retake"), href: `#/quiz/${test.id}` }),
         ],
       })
     );
   });
 
   const historyList = Card({
-    title: "Saved History",
-    description: "Stored in this browser only.",
+    title: t("profile.savedHistory"),
+    description: t("profile.localOnly"),
     children: [
       el(
         "div",
@@ -56,9 +58,17 @@ export function renderProfileView({ registry, refresh }) {
             el("h3", { text: `${result.quizTitle}: ${result.resultTitle}` }),
             el("p", {
               className: "quiet",
-              text: `${formatDate(result.takenAt)} · Confidence ${result.confidencePercent}%`,
+              text: t("profile.historyItem", {
+                date: formatDate(result.takenAt, locale),
+                confidence: result.confidencePercent,
+              }),
             }),
-            result.code ? el("p", { className: "quiet", text: `Code: ${result.code}` }) : null,
+            result.code
+              ? el("p", {
+                  className: "quiet",
+                  text: `${t("common.code")}: ${result.code}`,
+                })
+              : null,
           ])
         )
       ),
@@ -66,13 +76,13 @@ export function renderProfileView({ registry, refresh }) {
   });
 
   const privacyCard = Card({
-    title: "Local Privacy",
-    description: "Data never leaves your browser unless you manually share a link.",
+    title: t("profile.localPrivacyTitle"),
+    description: t("profile.localPrivacyDescription"),
     children: [
       el("div", { className: "row-actions" }, [
-        Button({ label: "Take Another Test", href: "#/tests", variant: "primary" }),
+        Button({ label: t("profile.takeAnotherTest"), href: "#/tests", variant: "primary" }),
         Button({
-          label: "Clear Local Data",
+          label: t("profile.clearLocalData"),
           onClick: () => {
             clearResults();
             refresh();

@@ -1,5 +1,6 @@
 const RESULTS_KEY = "self-discovery:results:v1";
 const THEME_KEY = "self-discovery:theme";
+const LOCALE_KEY = "self-discovery:locale";
 
 function readJson(key, fallback) {
   try {
@@ -56,4 +57,17 @@ export function saveThemePreference(theme) {
     return;
   }
   localStorage.setItem(THEME_KEY, theme);
+}
+
+export function loadLocalePreference() {
+  const saved = localStorage.getItem(LOCALE_KEY);
+  return saved || null;
+}
+
+export function saveLocalePreference(locale) {
+  if (!locale) {
+    localStorage.removeItem(LOCALE_KEY);
+    return;
+  }
+  localStorage.setItem(LOCALE_KEY, locale);
 }

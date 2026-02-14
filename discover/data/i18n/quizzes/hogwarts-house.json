@@ -1,0 +1,480 @@
+{
+  "locales": {
+    "ko": {
+      "title": "호그와트 기숙사 매칭",
+      "description": "공부, 우정, 도전 상황에서 드러나는 성향으로 내 기숙사 성격을 알아보세요.",
+      "durationEstimate": "4-6분",
+      "questions": {
+        "h1": {
+          "prompt": "어려운 시험이 다가옵니다. 가장 먼저 하는 일은?",
+          "options": {
+            "h1_a": { "label": "가장 어려운 범위부터 정면 돌파한다." },
+            "h1_b": { "label": "엄격한 학습 계획을 세우고 그대로 따른다." },
+            "h1_c": { "label": "스터디 그룹을 만들어 서로 도와준다." },
+            "h1_d": { "label": "시험 범위를 넘어 더 깊이 조사한다." }
+          }
+        },
+        "h2": {
+          "prompt": "친구가 부당한 대우를 받고 있습니다. 당신은...",
+          "options": {
+            "h2_a": { "label": "마찰이 생겨도 즉시 나선다." },
+            "h2_b": { "label": "사실을 모은 뒤 정확하게 대응한다." },
+            "h2_c": { "label": "개인적으로 다가가 정서적 안전을 지킨다." },
+            "h2_d": { "label": "영향력과 전략으로 판을 바꾼다." }
+          }
+        },
+        "h3": {
+          "prompt": "가장 흥미로운 마법 수업은?",
+          "options": {
+            "h3_a": { "label": "어둠의 마법 방어술" },
+            "h3_b": { "label": "마법약" },
+            "h3_c": { "label": "약초학" },
+            "h3_d": { "label": "고대 룬 문자" }
+          }
+        },
+        "h4": {
+          "prompt": "사람들이 나를 기억하길 바라는 핵심 특성은?",
+          "options": {
+            "h4_a": { "label": "용기" },
+            "h4_b": { "label": "충성심" },
+            "h4_c": { "label": "지혜" },
+            "h4_d": { "label": "야망" }
+          }
+        },
+        "h5": {
+          "prompt": "숨겨진 복도가 열렸습니다. 어떻게 할까요?",
+          "options": {
+            "h5_a": { "label": "지금 바로 들어가 탐험한다." },
+            "h5_b": { "label": "단서를 기록하고 목적을 해독한다." },
+            "h5_c": { "label": "믿을 수 있는 친구들과 안전하게 조사한다." },
+            "h5_d": { "label": "나중에 유리하게 쓸 전략을 먼저 생각한다." }
+          }
+        },
+        "h6": {
+          "prompt": "팀을 이끌 때 당신의 스타일은?",
+          "options": {
+            "h6_a": { "label": "앞장서서 행동을 이끈다." },
+            "h6_b": { "label": "모두를 포함시키고 분위기를 지킨다." },
+            "h6_c": { "label": "체계와 의사결정 구조를 설계한다." },
+            "h6_d": { "label": "목표를 정하고 강하게 추진한다." }
+          }
+        },
+        "h7": {
+          "prompt": "가장 끌리는 마법 생명체는?",
+          "options": {
+            "h7_a": { "label": "불사조" },
+            "h7_b": { "label": "오소리" },
+            "h7_c": { "label": "부엉이" },
+            "h7_d": { "label": "뱀" }
+          }
+        },
+        "h8": {
+          "prompt": "당신을 가장 강하게 움직이는 동기는?",
+          "options": {
+            "h8_a": { "label": "불가능에 맞서는 용기" },
+            "h8_b": { "label": "소속감과 신뢰" },
+            "h8_c": { "label": "원리를 이해하려는 욕구" },
+            "h8_d": { "label": "정상에 오르려는 의지" }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "gryffindor": {
+              "title": "그리핀도르",
+              "summary": "대담하고 행동 중심이며 중요한 순간에 위험을 감수합니다.",
+              "details": "도전 앞에서 앞으로 나아가며, 팀의 점화점이 되는 경우가 많습니다.",
+              "copyBlocks": [
+                { "text": "용감한 본능이 보이며 다른 기숙사 강점도 함께 지니고 있습니다." },
+                { "text": "강한 그리핀도르 신호: 용기와 직접 행동을 일관되게 선택했습니다." }
+              ]
+            },
+            "hufflepuff": {
+              "title": "후플푸프",
+              "summary": "성실하고 충성심이 높으며 공정함과 꾸준함을 중시합니다.",
+              "details": "성과만큼 사람을 중요하게 여기며 신뢰를 차근차근 쌓습니다.",
+              "copyBlocks": [
+                { "text": "협업 가치와 안정적인 실행력이 잘 드러납니다." },
+                { "text": "뚜렷한 후플푸프 신호: 충성, 인내, 배려를 일관되게 선택했습니다." }
+              ]
+            },
+            "ravenclaw": {
+              "title": "래번클로",
+              "summary": "호기심이 많고 분석적이며 학습과 아이디어에서 에너지를 얻습니다.",
+              "details": "패턴과 통찰을 통해 문제를 풀고, 생각의 깊이를 중시합니다.",
+              "copyBlocks": [
+                { "text": "지적 탐구 성향이 강하며 다른 영역과도 균형을 이룹니다." },
+                { "text": "강한 래번클로 신호: 깊이 있는 성찰과 탐구를 반복적으로 선택했습니다." }
+              ]
+            },
+            "slytherin": {
+              "title": "슬리데린",
+              "summary": "전략적이고 야심차며 영향력과 결과를 중시합니다.",
+              "details": "레버리지와 장기적 포지셔닝을 고려해 움직입니다.",
+              "copyBlocks": [
+                { "text": "실용적 야망과 전술적 감각이 뚜렷합니다." },
+                { "text": "뚜렷한 슬리데린 신호: 영향력과 성과 최적화를 일관되게 선택했습니다." }
+              ]
+            }
+          },
+          "fallback": {
+            "title": "균형 잡힌 기숙사 조합",
+            "summary": "여러 기숙사의 강점이 고르게 나타납니다.",
+            "details": "상황이 달라지면 결과도 달라질 수 있으니 나중에 다시 시도해 보세요."
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "결과: {{resultTitle}} (신뢰도 {{confidencePercent}}%)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "es": {
+      "title": "Compatibilidad de Casa Hogwarts",
+      "description": "Descubre qué rasgos de casa reflejas en estudio, amistad y desafío.",
+      "durationEstimate": "4-6 min",
+      "questions": {
+        "h1": {
+          "prompt": "Se acerca un examen difícil. ¿Cuál es tu primer paso?",
+          "options": {
+            "h1_a": { "label": "Empiezo por lo más difícil primero." },
+            "h1_b": { "label": "Hago un plan estricto y lo sigo." },
+            "h1_c": { "label": "Formo un grupo y apoyo a todos." },
+            "h1_d": { "label": "Investigo más allá del temario." }
+          }
+        },
+        "h2": {
+          "prompt": "Tratan injustamente a un amigo. Tú...",
+          "options": {
+            "h2_a": { "label": "Intervienes de inmediato, aunque haya conflicto." },
+            "h2_b": { "label": "Reúnes datos y actúas con precisión." },
+            "h2_c": { "label": "Hablas en privado y cuidas su seguridad emocional." },
+            "h2_d": { "label": "Usas influencia y estrategia para cambiar el resultado." }
+          }
+        },
+        "h3": {
+          "prompt": "¿Qué clase mágica te entusiasma más?",
+          "options": {
+            "h3_a": { "label": "Defensa Contra las Artes Oscuras" },
+            "h3_b": { "label": "Pociones" },
+            "h3_c": { "label": "Herbología" },
+            "h3_d": { "label": "Runas Antiguas" }
+          }
+        },
+        "h4": {
+          "prompt": "¿Qué rasgo quieres que recuerden de ti?",
+          "options": {
+            "h4_a": { "label": "Valentía" },
+            "h4_b": { "label": "Lealtad" },
+            "h4_c": { "label": "Sabiduría" },
+            "h4_d": { "label": "Ambición" }
+          }
+        },
+        "h5": {
+          "prompt": "Se abre un pasillo oculto. ¿Qué haces?",
+          "options": {
+            "h5_a": { "label": "Lo exploras ahora mismo." },
+            "h5_b": { "label": "Anotas pistas y descifras su propósito." },
+            "h5_c": { "label": "Invitas a amigos de confianza para ir con seguridad." },
+            "h5_d": { "label": "Piensas cómo usarlo estratégicamente después." }
+          }
+        },
+        "h6": {
+          "prompt": "Cuando lideras un equipo, tu estilo es...",
+          "options": {
+            "h6_a": { "label": "Liderar desde el frente e inspirar acción." },
+            "h6_b": { "label": "Incluir a todos y mantener la motivación." },
+            "h6_c": { "label": "Diseñar sistemas y decisiones inteligentes." },
+            "h6_d": { "label": "Marcar metas y exigir resultados." }
+          }
+        },
+        "h7": {
+          "prompt": "Elige la criatura mágica con la que más conectas.",
+          "options": {
+            "h7_a": { "label": "Fénix" },
+            "h7_b": { "label": "Tejón" },
+            "h7_c": { "label": "Búho" },
+            "h7_d": { "label": "Serpiente" }
+          }
+        },
+        "h8": {
+          "prompt": "¿Qué te motiva más?",
+          "options": {
+            "h8_a": { "label": "El coraje para enfrentar lo imposible" },
+            "h8_b": { "label": "Pertenencia y confianza" },
+            "h8_c": { "label": "Entender cómo funcionan las cosas" },
+            "h8_d": { "label": "Llegar a la cima" }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "gryffindor": {
+              "title": "Gryffindor",
+              "summary": "Valiente, orientado a la acción y dispuesto a asumir riesgos por lo importante.",
+              "details": "Tiendes a avanzar hacia el desafío y activar el movimiento del equipo."
+            },
+            "hufflepuff": {
+              "title": "Hufflepuff",
+              "summary": "Leal, constante y comprometido con la justicia y el esfuerzo sostenido.",
+              "details": "Construyes confianza con el tiempo y cuidas tanto a personas como a objetivos."
+            },
+            "ravenclaw": {
+              "title": "Ravenclaw",
+              "summary": "Curioso, analítico y energizado por aprender ideas nuevas.",
+              "details": "Sueles resolver problemas a través de patrones, reflexión y estrategia."
+            },
+            "slytherin": {
+              "title": "Slytherin",
+              "summary": "Estratégico, ambicioso y enfocado en influencia y resultados.",
+              "details": "Piensas en términos de ventaja, impacto y posicionamiento a largo plazo."
+            }
+          },
+          "fallback": {
+            "title": "Mezcla Equilibrada",
+            "summary": "Tus respuestas se distribuyen entre varias fortalezas de casa.",
+            "details": "Puedes repetir el test más adelante para comparar cambios por contexto."
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "Resultado: {{resultTitle}} ({{confidencePercent}}% de confianza)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "zh": {
+      "title": "霍格沃茨学院匹配",
+      "description": "从学习、友谊与挑战中的选择，看看你更接近哪个学院特质。",
+      "durationEstimate": "4-6 分钟",
+      "questions": {
+        "h1": {
+          "prompt": "一场很难的考试要来了。你第一步会做什么？",
+          "options": {
+            "h1_a": { "label": "先啃最难的部分。" },
+            "h1_b": { "label": "制定严格复习计划并执行。" },
+            "h1_c": { "label": "组织学习小组，互相支持。" },
+            "h1_d": { "label": "研究超出考纲的内容。" }
+          }
+        },
+        "h2": {
+          "prompt": "朋友受到不公平对待时，你会...",
+          "options": {
+            "h2_a": { "label": "立刻站出来，即使会有冲突。" },
+            "h2_b": { "label": "先收集事实，再精准行动。" },
+            "h2_c": { "label": "私下沟通，先保护对方情绪安全。" },
+            "h2_d": { "label": "用影响力和策略扭转结果。" }
+          }
+        },
+        "h3": {
+          "prompt": "你最想上的魔法课是？",
+          "options": {
+            "h3_a": { "label": "黑魔法防御术" },
+            "h3_b": { "label": "魔药课" },
+            "h3_c": { "label": "草药学" },
+            "h3_d": { "label": "古代如尼文" }
+          }
+        },
+        "h4": {
+          "prompt": "你希望别人记住你的哪个特质？",
+          "options": {
+            "h4_a": { "label": "勇气" },
+            "h4_b": { "label": "忠诚" },
+            "h4_c": { "label": "智慧" },
+            "h4_d": { "label": "野心" }
+          }
+        },
+        "h5": {
+          "prompt": "一条隐藏走廊打开了。你会？",
+          "options": {
+            "h5_a": { "label": "马上进去探索。" },
+            "h5_b": { "label": "记录线索并分析用途。" },
+            "h5_c": { "label": "和可信的朋友一起安全调查。" },
+            "h5_d": { "label": "先思考它未来的战略价值。" }
+          }
+        },
+        "h6": {
+          "prompt": "带领团队时，你的风格是...",
+          "options": {
+            "h6_a": { "label": "冲在前面，带动行动。" },
+            "h6_b": { "label": "照顾每个人并维持士气。" },
+            "h6_c": { "label": "搭建系统和决策路径。" },
+            "h6_d": { "label": "设定目标并强力推进。" }
+          }
+        },
+        "h7": {
+          "prompt": "你最有共鸣的魔法生物是？",
+          "options": {
+            "h7_a": { "label": "凤凰" },
+            "h7_b": { "label": "獾" },
+            "h7_c": { "label": "猫头鹰" },
+            "h7_d": { "label": "蛇" }
+          }
+        },
+        "h8": {
+          "prompt": "最能驱动你前进的是？",
+          "options": {
+            "h8_a": { "label": "面对不可能的勇气" },
+            "h8_b": { "label": "归属感与信任" },
+            "h8_c": { "label": "理解事物运作原理" },
+            "h8_d": { "label": "登上顶峰" }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "gryffindor": {
+              "title": "格兰芬多",
+              "summary": "大胆、行动导向，并愿意为重要的事承担风险。",
+              "details": "你会主动迎向挑战，常常成为推动团队前进的人。"
+            },
+            "hufflepuff": {
+              "title": "赫奇帕奇",
+              "summary": "稳重、忠诚，重视公平与持续投入。",
+              "details": "你重视人与结果同等重要，并长期建立信任。"
+            },
+            "ravenclaw": {
+              "title": "拉文克劳",
+              "summary": "好奇、分析型，因学习和想法而充满动力。",
+              "details": "你倾向通过洞察、模式和思考来解决问题。"
+            },
+            "slytherin": {
+              "title": "斯莱特林",
+              "summary": "策略性强、有野心，关注影响力和结果。",
+              "details": "你会从杠杆、成果和长期布局角度思考。"
+            }
+          },
+          "fallback": {
+            "title": "均衡学院组合",
+            "summary": "你的回答在多个学院特质间较为平均。",
+            "details": "可以在不同情境下重测，观察结果变化。"
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "结果：{{resultTitle}}（置信度 {{confidencePercent}}%）",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "ja": {
+      "title": "ホグワーツ寮マッチ",
+      "description": "学習・友情・挑戦の場面で表れる傾向から、あなたの寮タイプを見つけます。",
+      "durationEstimate": "4-6分",
+      "questions": {
+        "h1": {
+          "prompt": "難しい試験が近づいています。最初に何をしますか？",
+          "options": {
+            "h1_a": { "label": "最難関の範囲から先に取り組む。" },
+            "h1_b": { "label": "厳密な学習計画を作り、着実に進める。" },
+            "h1_c": { "label": "勉強グループを作って皆を支える。" },
+            "h1_d": { "label": "シラバス外まで調べて理解を深める。" }
+          }
+        },
+        "h2": {
+          "prompt": "友人が不当な扱いを受けています。あなたは...",
+          "options": {
+            "h2_a": { "label": "摩擦があってもすぐに介入する。" },
+            "h2_b": { "label": "事実を集めてから正確に動く。" },
+            "h2_c": { "label": "個別に話して心の安全を守る。" },
+            "h2_d": { "label": "影響力と戦略で状況を変える。" }
+          }
+        },
+        "h3": {
+          "prompt": "最もワクワクする魔法の授業は？",
+          "options": {
+            "h3_a": { "label": "闇の魔術に対する防衛術" },
+            "h3_b": { "label": "魔法薬学" },
+            "h3_c": { "label": "薬草学" },
+            "h3_d": { "label": "古代ルーン文字" }
+          }
+        },
+        "h4": {
+          "prompt": "あなたを象徴する特性として覚えてほしいのは？",
+          "options": {
+            "h4_a": { "label": "勇気" },
+            "h4_b": { "label": "忠誠心" },
+            "h4_c": { "label": "知恵" },
+            "h4_d": { "label": "野心" }
+          }
+        },
+        "h5": {
+          "prompt": "隠し通路が開きました。どうしますか？",
+          "options": {
+            "h5_a": { "label": "今すぐ入って探索する。" },
+            "h5_b": { "label": "手がかりを記録して目的を解読する。" },
+            "h5_c": { "label": "信頼できる仲間と安全に調査する。" },
+            "h5_d": { "label": "将来の優位性にどう使うか考える。" }
+          }
+        },
+        "h6": {
+          "prompt": "チームを率いるときのあなたのスタイルは？",
+          "options": {
+            "h6_a": { "label": "先頭に立って行動を促す。" },
+            "h6_b": { "label": "全員を巻き込み士気を保つ。" },
+            "h6_c": { "label": "仕組みと意思決定ルートを設計する。" },
+            "h6_d": { "label": "目標を明確にして成果を押し上げる。" }
+          }
+        },
+        "h7": {
+          "prompt": "最も共感する魔法生物を選ぶなら？",
+          "options": {
+            "h7_a": { "label": "不死鳥" },
+            "h7_b": { "label": "アナグマ" },
+            "h7_c": { "label": "フクロウ" },
+            "h7_d": { "label": "蛇" }
+          }
+        },
+        "h8": {
+          "prompt": "あなたを最も動かすものは？",
+          "options": {
+            "h8_a": { "label": "不可能に挑む勇気" },
+            "h8_b": { "label": "帰属意識と信頼" },
+            "h8_c": { "label": "仕組みを理解する喜び" },
+            "h8_d": { "label": "頂点を目指す意志" }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "gryffindor": {
+              "title": "グリフィンドール",
+              "summary": "大胆で行動志向。大切なことのためにリスクを取れるタイプです。",
+              "details": "挑戦に向かって前進し、周囲を動かす起点になる傾向があります。"
+            },
+            "hufflepuff": {
+              "title": "ハッフルパフ",
+              "summary": "誠実で忠実。公平さと継続的な努力を重視します。",
+              "details": "成果だけでなく人を大切にし、信頼を積み重ねます。"
+            },
+            "ravenclaw": {
+              "title": "レイブンクロー",
+              "summary": "好奇心と分析力が強く、学びとアイデアで活力を得ます。",
+              "details": "洞察とパターン認識を軸に、熟考して問題解決します。"
+            },
+            "slytherin": {
+              "title": "スリザリン",
+              "summary": "戦略的で野心的。影響力と成果に焦点を当てます。",
+              "details": "レバレッジと長期的ポジショニングを考えて動きます。"
+            }
+          },
+          "fallback": {
+            "title": "バランス型ミックス",
+            "summary": "複数の寮の強みがバランスよく出ています。",
+            "details": "状況が変わると結果も変わるため、後日再受験もおすすめです。"
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "結果: {{resultTitle}} (信頼度 {{confidencePercent}}%)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    }
+  }
+}

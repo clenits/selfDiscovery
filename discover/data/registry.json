@@ -6,7 +6,8 @@
       "description": "A values-first sorting quiz inspired by Hogwarts houses.",
       "durationEstimate": "4-6 min",
       "tags": ["values", "fictional", "identity"],
-      "path": "./data/hogwarts-house.json"
+      "path": "./data/hogwarts-house.json",
+      "i18nPath": "./data/i18n/quizzes/hogwarts-house.json"
     },
     {
       "id": "personality-4axis",
@@ -14,7 +15,8 @@
       "description": "Find your 4-axis style across energy, focus, decisions, and planning.",
       "durationEstimate": "5-7 min",
       "tags": ["personality", "self-reflection"],
-      "path": "./data/personality-4axis.json"
+      "path": "./data/personality-4axis.json",
+      "i18nPath": "./data/i18n/quizzes/personality-4axis.json"
     }
   ]
 }

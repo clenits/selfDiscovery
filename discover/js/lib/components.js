@@ -168,11 +168,13 @@ export function Question({
   prompt,
   description,
   inputControl,
+  questionLabel,
+  requiredLabel,
 }) {
   return el("section", { className: "card stack-md" }, [
     el("div", { className: "question-meta" }, [
-      el("span", { className: "pill", text: `Question ${index} of ${total}` }),
-      el("span", { className: "quiet", text: "Answer required" }),
+      el("span", { className: "pill", text: questionLabel || `Question ${index} of ${total}` }),
+      el("span", { className: "quiet", text: requiredLabel || "Answer required" }),
     ]),
     el("h3", { className: "question-title", text: prompt }),
     description ? el("p", { text: description }) : null,

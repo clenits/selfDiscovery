@@ -1,0 +1,68 @@
+{
+  "locales": {
+    "ko": {
+      "tests": {
+        "hogwarts-house": {
+          "title": "호그와트 기숙사 매칭",
+          "description": "가치관 기반으로 나와 맞는 기숙사 성향을 찾아보는 테스트입니다.",
+          "durationEstimate": "4-6분",
+          "tags": ["가치관", "픽션", "정체성"]
+        },
+        "personality-4axis": {
+          "title": "4축 성격 유형",
+          "description": "에너지, 인식, 의사결정, 계획 4축으로 내 성향을 확인합니다.",
+          "durationEstimate": "5-7분",
+          "tags": ["성격", "자기이해"]
+        }
+      }
+    },
+    "es": {
+      "tests": {
+        "hogwarts-house": {
+          "title": "Compatibilidad de Casa Hogwarts",
+          "description": "Prueba basada en valores para ver con qué casa de Hogwarts conectas más.",
+          "durationEstimate": "4-6 min",
+          "tags": ["valores", "ficción", "identidad"]
+        },
+        "personality-4axis": {
+          "title": "Personalidad de 4 Ejes",
+          "description": "Descubre tu estilo en energía, enfoque, decisiones y planificación.",
+          "durationEstimate": "5-7 min",
+          "tags": ["personalidad", "autoconocimiento"]
+        }
+      }
+    },
+    "zh": {
+      "tests": {
+        "hogwarts-house": {
+          "title": "霍格沃茨学院匹配",
+          "description": "基于价值观的排序测试，看看你更接近哪个学院。",
+          "durationEstimate": "4-6 分钟",
+          "tags": ["价值观", "虚构", "身份"]
+        },
+        "personality-4axis": {
+          "title": "四轴人格测试",
+          "description": "从能量、认知、决策与计划四个维度了解你的风格。",
+          "durationEstimate": "5-7 分钟",
+          "tags": ["人格", "自我认知"]
+        }
+      }
+    },
+    "ja": {
+      "tests": {
+        "hogwarts-house": {
+          "title": "ホグワーツ寮マッチ",
+          "description": "価値観ベースで、どのホグワーツ寮に近いかを見つけるテストです。",
+          "durationEstimate": "4-6分",
+          "tags": ["価値観", "フィクション", "自己像"]
+        },
+        "personality-4axis": {
+          "title": "4軸パーソナリティ",
+          "description": "エネルギー、認知、意思決定、計画の4軸で傾向を確認します。",
+          "durationEstimate": "5-7分",
+          "tags": ["性格", "自己理解"]
+        }
+      }
+    }
+  }
+}

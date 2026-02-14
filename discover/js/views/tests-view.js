@@ -1,11 +1,10 @@
 import { Button, Card } from "../lib/components.js";
 import { el } from "../lib/dom.js";
 
-export function renderTestsView({ registry, latestResults }) {
+export function renderTestsView({ registry, latestResults, t }) {
   const heading = Card({
-    title: "Available Tests",
-    description:
-      "Each quiz is driven by JSON data. Add new tests by dropping a data file and registering metadata.",
+    title: t("tests.title"),
+    description: t("tests.description"),
   });
 
   const list = el("div", { className: "quiz-list" });
@@ -24,15 +23,18 @@ export function renderTestsView({ registry, latestResults }) {
         latest
           ? el("p", {
               className: "quiet",
-              text: `Saved result: ${latest.resultTitle} (${latest.confidencePercent}% confidence)`,
+              text: t("common.savedResult", {
+                title: latest.resultTitle,
+                confidence: latest.confidencePercent,
+              }),
             })
           : el("p", {
               className: "quiet",
-              text: "No local result saved yet.",
+              text: t("common.noLocalSavedResult"),
             }),
         el("div", { className: "row-actions" }, [
-          Button({ label: "Take Test", href: `#/quiz/${test.id}`, variant: "primary" }),
-          latest ? Button({ label: "View Profile", href: "#/profile" }) : null,
+          Button({ label: t("tests.takeTest"), href: `#/quiz/${test.id}`, variant: "primary" }),
+          latest ? Button({ label: t("tests.viewProfile"), href: "#/profile" }) : null,
         ]),
       ],
     });

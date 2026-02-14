@@ -47,12 +47,25 @@ async function main() {
   }
 
   const files = new Set(await readdir(dataDir));
+  const i18nRegistryFile = path.join(dataDir, "i18n", "registry.json");
+  await readFile(i18nRegistryFile, "utf8").catch(() => {
+    errors.push("Missing localization registry file: ./data/i18n/registry.json");
+  });
+  const i18nQuizDir = path.resolve(dataDir, "i18n", "quizzes");
+  const i18nFiles = new Set(await readdir(i18nQuizDir).catch(() => []));
 
   for (const test of registry.tests || []) {
     const targetFile = path.basename(test.path || "");
     if (!targetFile || !files.has(targetFile)) {
       errors.push(`Missing quiz file for test '${test.id}': ${test.path}`);
       continue;
+    }
+
+    if (test.i18nPath) {
+      const i18nFile = path.basename(test.i18nPath);
+      if (!i18nFiles.has(i18nFile)) {
+        errors.push(`Missing i18n file for test '${test.id}': ${test.i18nPath}`);
+      }
     }
 
     const raw = await readFile(path.join(dataDir, targetFile), "utf8");

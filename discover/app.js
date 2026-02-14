@@ -1,11 +1,14 @@
 import { Card, ErrorBox } from "./js/lib/components.js";
 import { clearNode } from "./js/lib/dom.js";
+import { createTranslator, detectPreferredLocale, LOCALE_OPTIONS, normalizeLocale } from "./js/lib/i18n.js";
 import { loadRegistry, QuizLoadError } from "./js/lib/quiz-loader.js";
 import { updateSeo } from "./js/lib/meta.js";
 import { Router } from "./js/lib/router.js";
 import {
   latestResultsByQuiz,
+  loadLocalePreference,
   loadThemePreference,
+  saveLocalePreference,
   saveThemePreference,
 } from "./js/lib/storage.js";
 import { renderHomeView } from "./js/views/home-view.js";
@@ -16,15 +19,39 @@ import { renderTestsView } from "./js/views/tests-view.js";
 
 const appNode = document.querySelector("#app");
 const themeToggle = document.querySelector("#theme-toggle");
+const languageSelect = document.querySelector("#language-select");
+const skipLink = document.querySelector("#skip-link");
+const brandLink = document.querySelector("#brand-link");
+const topNav = document.querySelector("#top-nav");
+const navHome = document.querySelector("#nav-home");
+const navTests = document.querySelector("#nav-tests");
+const navProfile = document.querySelector("#nav-profile");
+const languageLabel = document.querySelector("#language-label");
+const fallbackTitle = document.querySelector("#fallback-title");
+const fallbackDesc = document.querySelector("#fallback-desc");
+const fallbackCache = document.querySelector("#fallback-cache");
+const fallbackOpenTests = document.querySelector("#fallback-open-tests");
+const noscriptTitle = document.querySelector("#noscript-title");
+const noscriptDesc = document.querySelector("#noscript-desc");
+const footerCopy = document.querySelector("#footer-copy");
 
 const appState = {
   sessions: {},
   shareNotice: "",
   registry: null,
+  registryLocale: null,
   registryError: null,
+  locale: "en",
+  t: createTranslator("en"),
 };
 
 document.body.dataset.enhanced = "true";
+
+function setText(node, text) {
+  if (node) {
+    node.textContent = text;
+  }
+}
 
 function setTheme(theme) {
   if (theme === "light" || theme === "dark") {
@@ -46,8 +73,11 @@ function getEffectiveTheme() {
 
 function syncThemeToggle() {
   const darkMode = getEffectiveTheme() === "dark";
-  themeToggle.textContent = darkMode ? "Theme: Dark" : "Theme: Light";
+  themeToggle.textContent = darkMode
+    ? appState.t("app.themeDark")
+    : appState.t("app.themeLight");
   themeToggle.setAttribute("aria-pressed", String(darkMode));
+  themeToggle.setAttribute("aria-label", appState.t("app.themeToggleAria"));
 }
 
 function initTheme() {
@@ -81,6 +111,64 @@ async function registerServiceWorker() {
   }
 }
 
+function syncLanguageSelect() {
+  if (!languageSelect.options.length) {
+    LOCALE_OPTIONS.forEach((option) => {
+      const node = document.createElement("option");
+      node.value = option.id;
+      node.textContent = option.label;
+      languageSelect.append(node);
+    });
+  }
+  languageSelect.value = appState.locale;
+}
+
+function syncStaticCopy() {
+  const t = appState.t;
+  document.documentElement.lang = appState.locale;
+
+  setText(skipLink, t("app.skipToContent"));
+  setText(brandLink, t("app.brand"));
+  if (topNav) {
+    topNav.setAttribute("aria-label", t("app.navSection"));
+  }
+  setText(navHome, t("app.nav.home"));
+  setText(navTests, t("app.nav.tests"));
+  setText(navProfile, t("app.nav.profile"));
+  setText(languageLabel, t("app.language"));
+
+  setText(fallbackTitle, t("app.fallback.title"));
+  setText(fallbackDesc, t("app.fallback.description"));
+  setText(fallbackCache, t("app.fallback.cacheHint"));
+  setText(fallbackOpenTests, t("app.fallback.openTests"));
+  setText(noscriptTitle, t("app.noscript.title"));
+  setText(noscriptDesc, t("app.noscript.description"));
+  setText(footerCopy, t("app.footer"));
+
+  syncThemeToggle();
+}
+
+function applyLocale(locale, { persist = true } = {}) {
+  appState.locale = normalizeLocale(locale);
+  appState.t = createTranslator(appState.locale);
+  if (persist) {
+    saveLocalePreference(appState.locale);
+  }
+  syncLanguageSelect();
+  syncStaticCopy();
+}
+
+function initLocale() {
+  const savedLocale = loadLocalePreference();
+  const preferred = detectPreferredLocale(savedLocale);
+  applyLocale(preferred, { persist: true });
+
+  languageSelect.addEventListener("change", () => {
+    applyLocale(languageSelect.value, { persist: true });
+    router.renderCurrent();
+  });
+}
+
 function markActiveNav(path) {
   const links = Array.from(document.querySelectorAll(".top-nav a"));
   links.forEach((link) => {
@@ -94,55 +182,65 @@ function markActiveNav(path) {
 }
 
 function routeMeta(path, params, registry) {
+  const t = appState.t;
   if (path === "/") {
     return {
-      title: "Self Discovery Lab",
-      description: "A place to learn about yourself with offline data-driven tests.",
+      title: t("meta.homeTitle"),
+      description: t("meta.homeDescription"),
     };
   }
 
   if (path === "/tests") {
     return {
-      title: "Tests | Self Discovery Lab",
-      description: "Browse personality and house sorting quizzes.",
+      title: t("meta.testsTitle"),
+      description: t("meta.testsDescription"),
     };
   }
 
   if (path === "/profile") {
     return {
-      title: "My Profile | Self Discovery Lab",
-      description: "View your locally saved quiz outcomes and history.",
+      title: t("meta.profileTitle"),
+      description: t("meta.profileDescription"),
     };
   }
 
   if (path.startsWith("/quiz/")) {
     const quiz = registry?.tests.find((item) => item.id === params.quizId);
     return {
-      title: `${quiz?.title || "Quiz"} | Self Discovery Lab`,
-      description: quiz?.description || "Take this self discovery test.",
+      title: `${quiz?.title || t("meta.quizFallbackTitle")} | ${t("app.brand")}`,
+      description: quiz?.description || t("meta.quizFallbackDescription"),
     };
   }
 
   if (path === "/share") {
     return {
-      title: "Shared Result | Self Discovery Lab",
-      description: "View a shared Self Discovery result card.",
+      title: t("meta.shareTitle"),
+      description: t("meta.shareDescription"),
     };
   }
 
   return {
-    title: "Not Found | Self Discovery Lab",
-    description: "The requested route was not found.",
+    title: t("meta.notFoundTitle"),
+    description: t("meta.notFoundDescription"),
   };
 }
 
-async function ensureRegistry() {
-  if (appState.registry || appState.registryError) {
+async function ensureRegistry(locale) {
+  if (appState.registry && appState.registryLocale === locale) {
     return;
   }
+  if (appState.registryError && appState.registryLocale === locale) {
+    return;
+  }
+
   try {
-    appState.registry = await loadRegistry();
+    appState.registry = await loadRegistry(locale);
+    appState.registryLocale = locale;
+    appState.registryError = null;
   } catch (error) {
+    appState.registry = null;
+    appState.registryLocale = locale;
+
     if (error instanceof QuizLoadError) {
       appState.registryError = {
         title: error.message,
@@ -150,19 +248,21 @@ async function ensureRegistry() {
       };
       return;
     }
+
     appState.registryError = {
       title: "Registry failed to load.",
-      details: ["Unexpected error while loading /discover/data/registry.json"],
+      details: ["Unexpected error while loading ./data/registry.json"],
     };
   }
 }
 
 function registryErrorView() {
+  const t = appState.t;
   return Card({
-    title: "Quiz Registry Error",
-    description: "Quiz data could not be loaded. Check JSON schema and file paths.",
+    title: t("common.registryErrorTitle"),
+    description: t("common.registryErrorDesc"),
     children: [
-      ErrorBox(appState.registryError?.title || "Unknown error", appState.registryError?.details),
+      ErrorBox(appState.registryError?.title || t("common.unknownError"), appState.registryError?.details),
     ],
   });
 }
@@ -179,7 +279,7 @@ const routes = [
 const router = new Router({
   routes,
   onRouteChange: async ({ route, path, query, params }) => {
-    await ensureRegistry();
+    await ensureRegistry(appState.locale);
     markActiveNav(path);
 
     const meta = routeMeta(path, params, appState.registry);
@@ -198,11 +298,13 @@ const router = new Router({
       node = renderHomeView({
         registry: appState.registry,
         latestResults: latestResultsByQuiz(),
+        t: appState.t,
       });
     } else if (route.id === "tests") {
       node = renderTestsView({
         registry: appState.registry,
         latestResults: latestResultsByQuiz(),
+        t: appState.t,
       });
     } else if (route.id === "quiz") {
       appState.shareNotice = "";
@@ -210,11 +312,15 @@ const router = new Router({
         quizId: params.quizId,
         registry: appState.registry,
         appState,
+        locale: appState.locale,
+        t: appState.t,
         refresh: () => router.renderCurrent(),
       });
     } else if (route.id === "profile") {
       node = renderProfileView({
         registry: appState.registry,
+        locale: appState.locale,
+        t: appState.t,
         refresh: () => router.renderCurrent(),
       });
     } else if (route.id === "share") {
@@ -222,12 +328,14 @@ const router = new Router({
         query,
         registry: appState.registry,
         appState,
+        locale: appState.locale,
+        t: appState.t,
         refresh: () => router.renderCurrent(),
       });
     } else {
       node = Card({
-        title: "Page Not Found",
-        description: "That route does not exist.",
+        title: appState.t("common.pageNotFoundTitle"),
+        description: appState.t("common.pageNotFoundDesc"),
       });
     }
 
@@ -236,6 +344,7 @@ const router = new Router({
   },
 });
 
+initLocale();
 initTheme();
 registerServiceWorker();
 router.start();

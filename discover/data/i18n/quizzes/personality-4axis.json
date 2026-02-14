@@ -1,0 +1,476 @@
+{
+  "locales": {
+    "ko": {
+      "title": "4축 성격 유형",
+      "description": "에너지, 인식, 판단, 계획의 네 축에서 기본 성향을 확인합니다.",
+      "durationEstimate": "5-7분",
+      "questions": {
+        "p1": {
+          "prompt": "이상적인 주말은 보통 이렇게 시작됩니다.",
+          "options": {
+            "p1_a": { "label": "사람들과의 약속과 활발한 대화" },
+            "p1_b": { "label": "조용한 시간, 혼자 하는 취미, 1:1 만남" }
+          }
+        },
+        "p2": {
+          "prompt": "문제를 풀 때 더 신뢰하는 것은?",
+          "options": {
+            "p2_a": { "label": "구체적 사실과 검증된 방법" },
+            "p2_b": { "label": "패턴, 가능성, 미래 시나리오" }
+          }
+        },
+        "p3": {
+          "prompt": "어려운 결정을 할 때 우선하는 것은?",
+          "options": {
+            "p3_a": { "label": "일관성, 논리, 규칙 기반 공정성" },
+            "p3_b": { "label": "사람에 미치는 영향과 가치" }
+          }
+        },
+        "p4": {
+          "prompt": "마감기한에 대한 당신의 느낌은?",
+          "options": {
+            "p4_a": { "label": "명확한 계획과 조기 마무리가 좋다" },
+            "p4_b": { "label": "상황에 맞게 유연하게 조정한다" }
+          }
+        },
+        "p5": {
+          "prompt": "내 스타일과 자주 맞는 문장을 모두 선택하세요.",
+          "description": "복수 선택 문항입니다.",
+          "options": {
+            "p5_a": { "label": "생각을 말하면서 아이디어를 발전시킨다" },
+            "p5_b": { "label": "다른 사람이 놓친 현실적 디테일을 본다" },
+            "p5_c": { "label": "미래 시나리오를 자연스럽게 그린다" },
+            "p5_d": { "label": "모두가 존중받는지 먼저 확인한다" },
+            "p5_e": { "label": "미리 정리해 나중 스트레스를 줄인다" },
+            "p5_f": { "label": "필요할 때까지 계획을 유연하게 둔다" }
+          }
+        },
+        "p6": {
+          "prompt": "사회적 활동이 많았던 주 후, 얼마나 회복되나요?",
+          "description": "슬라이더 문항: 1 = 지침, 5 = 에너지 충전",
+          "labelLow": "지침",
+          "labelHigh": "에너지 충전"
+        },
+        "p7": {
+          "prompt": "어느 설명이 더 가깝나요?",
+          "options": {
+            "p7_a": { "label": "검증된 방법과 현실적 단계를 선호한다" },
+            "p7_b": { "label": "실험과 개념적 도약을 즐긴다" }
+          }
+        },
+        "p8": {
+          "prompt": "팀 갈등에서 첫 반응은?",
+          "options": {
+            "p8_a": { "label": "사실을 정리하고 합리적 경로를 만든다" },
+            "p8_b": { "label": "감정을 읽고 신뢰 회복부터 한다" }
+          }
+        },
+        "p9": {
+          "prompt": "계획 스타일은?",
+          "options": {
+            "p9_a": { "label": "구조화된 이정표와 명확한 약속" },
+            "p9_b": { "label": "새 입력에 반응하는 즉흥적 조정" }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "pairs": [
+            { "label": "에너지" },
+            { "label": "인식" },
+            { "label": "의사결정" },
+            { "label": "구조" }
+          ],
+          "codes": {
+            "ISTJ": { "summary": "체계적이고 신뢰할 수 있으며, 기준을 지키며 실행합니다." },
+            "ISFJ": { "summary": "세심하고 안정적이며, 실질적 배려를 잘 실천합니다." },
+            "INFJ": { "summary": "통찰력과 가치관을 연결해 장기적 의미를 추구합니다." },
+            "INTJ": { "summary": "독립적 전략가로 시스템 최적화에 강합니다." },
+            "ISTP": { "summary": "침착하고 유연하며 실제 문제를 빠르게 해결합니다." },
+            "ISFP": { "summary": "현실감각과 진정성을 바탕으로 조화를 추구합니다." },
+            "INFP": { "summary": "가치지향적이며 내적 의미와 목적을 중시합니다." },
+            "INTP": { "summary": "분석적이며 개념적 깊이와 정밀함을 추구합니다." },
+            "ESTP": { "summary": "상황판단이 빠르고 실행력이 강한 실전형입니다." },
+            "ESFP": { "summary": "생동감 있고 즉흥적이며 경험 중심으로 움직입니다." },
+            "ENFP": { "summary": "창의적이고 사람 중심이며 아이디어를 연결합니다." },
+            "ENTP": { "summary": "가설을 시험하고 가능성을 넓히는 혁신형입니다." },
+            "ESTJ": { "summary": "조직적이고 명확하며 실행을 견인합니다." },
+            "ESFJ": { "summary": "협력적이고 안정적이며 팀 조율에 강합니다." },
+            "ENFJ": {
+              "summary": "관계 기반 리더십으로 성장을 이끄는 공감형입니다.",
+              "copyBlocks": [
+                { "text": "사람 중심 리더십이 강하지만 인접 성향과도 균형을 이룹니다." },
+                { "text": "관계와 가치 기반 의사결정이 매우 뚜렷하게 나타납니다." }
+              ]
+            },
+            "ENTJ": { "summary": "결단력과 목표지향성이 높고 기준을 끌어올립니다." }
+          },
+          "fallback": {
+            "title": "균형 잡힌 축 조합",
+            "summary": "축 간 점수가 비슷해 혼합형 프로필이 나타났습니다.",
+            "details": "상황 적응력이 높은 편일 수 있습니다. 다른 컨텍스트에서 다시 시도해 보세요."
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "유형: {{resultTitle}} (신뢰도 {{confidencePercent}}%)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "es": {
+      "title": "Personalidad de 4 Ejes",
+      "description": "Mide tus tendencias por defecto en cuatro ejes de personalidad.",
+      "durationEstimate": "5-7 min",
+      "questions": {
+        "p1": {
+          "prompt": "Tu fin de semana ideal suele empezar con...",
+          "options": {
+            "p1_a": { "label": "Planes con gente y conversaciones activas." },
+            "p1_b": { "label": "Tiempo tranquilo, hobbies solitarios o uno a uno." }
+          }
+        },
+        "p2": {
+          "prompt": "Al resolver un problema, confías más en...",
+          "options": {
+            "p2_a": { "label": "Hechos concretos y métodos probados." },
+            "p2_b": { "label": "Patrones, posibilidades y escenarios futuros." }
+          }
+        },
+        "p3": {
+          "prompt": "En decisiones difíciles priorizas...",
+          "options": {
+            "p3_a": { "label": "Lógica objetiva, consistencia y reglas." },
+            "p3_b": { "label": "Impacto humano, valores y contexto emocional." }
+          }
+        },
+        "p4": {
+          "prompt": "¿Cómo te llevas con los plazos?",
+          "options": {
+            "p4_a": { "label": "Prefiero planes claros y cerrar pronto." },
+            "p4_b": { "label": "Me adapto sobre la marcha y dejo opciones abiertas." }
+          }
+        },
+        "p5": {
+          "prompt": "Marca todas las frases que te describen a menudo.",
+          "description": "Pregunta de selección múltiple.",
+          "options": {
+            "p5_a": { "label": "Pienso en voz alta mientras desarrollo ideas." },
+            "p5_b": { "label": "Detecto detalles prácticos que otros no ven." },
+            "p5_c": { "label": "Imagino escenarios futuros con facilidad." },
+            "p5_d": { "label": "Compruebo si todos se sienten escuchados." },
+            "p5_e": { "label": "Organizo pronto para reducir estrés después." },
+            "p5_f": { "label": "Mantengo el plan flexible hasta el último momento útil." }
+          }
+        },
+        "p6": {
+          "prompt": "Después de una semana social intensa, ¿qué tan recuperado te sientes?",
+          "description": "Deslizador: 1 = agotado, 5 = energizado.",
+          "labelLow": "Agotado",
+          "labelHigh": "Energizado"
+        },
+        "p7": {
+          "prompt": "¿Qué descripción se parece más a ti?",
+          "options": {
+            "p7_a": { "label": "Prefiero métodos probados y pasos realistas." },
+            "p7_b": { "label": "Disfruto experimentar y saltar entre conceptos." }
+          }
+        },
+        "p8": {
+          "prompt": "En un conflicto de equipo, tu primer impulso es...",
+          "options": {
+            "p8_a": { "label": "Aclarar hechos y definir un camino racional." },
+            "p8_b": { "label": "Leer emociones y reparar confianza primero." }
+          }
+        },
+        "p9": {
+          "prompt": "Tu preferencia de planificación es...",
+          "options": {
+            "p9_a": { "label": "Hitos estructurados y compromisos claros." },
+            "p9_b": { "label": "Improvisación flexible según nueva información." }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "pairs": [
+            { "label": "Energía" },
+            { "label": "Enfoque" },
+            { "label": "Decisiones" },
+            { "label": "Estructura" }
+          ],
+          "codes": {
+            "ISTJ": { "summary": "Metódico y confiable; valoras estándares claros y ejecución." },
+            "ISFJ": { "summary": "Apoyo constante; combinas detalle con cuidado práctico." },
+            "INFJ": { "summary": "Perspectiva profunda; unes visión y sentido humano." },
+            "INTJ": { "summary": "Estratégico e independiente; optimizas sistemas a futuro." },
+            "ISTP": { "summary": "Calmo y adaptable; resuelves con eficiencia práctica." },
+            "ISFP": { "summary": "Auténtico y sensible; buscas armonía realista." },
+            "INFP": { "summary": "Reflexivo y guiado por valores; priorizas propósito." },
+            "INTP": { "summary": "Analítico y curioso; disfrutas profundidad conceptual." },
+            "ESTP": { "summary": "Directo y pragmático; reaccionas rápido ante la situación." },
+            "ESFP": { "summary": "Expresivo y espontáneo; energizas el entorno." },
+            "ENFP": { "summary": "Creativo y social; conectas ideas y personas." },
+            "ENTP": { "summary": "Inventivo y estratégico; cuestionas supuestos." },
+            "ESTJ": { "summary": "Organizado y claro; impulsas estructura y resultados." },
+            "ESFJ": { "summary": "Colaborativo y confiable; coordinas bien al grupo." },
+            "ENFJ": {
+              "summary": "Liderazgo empático; movilizas crecimiento compartido.",
+              "copyBlocks": [
+                { "text": "Muestras liderazgo relacional con rasgos equilibrados cercanos." },
+                { "text": "Tu patrón apunta con fuerza a liderazgo humano y valores." }
+              ]
+            },
+            "ENTJ": { "summary": "Decidido y orientado a metas; alineas sistemas y personas." }
+          },
+          "fallback": {
+            "title": "Mezcla Equilibrada de Ejes",
+            "summary": "Tus ejes aparecen cercanos, con un perfil mixto.",
+            "details": "Puedes adaptar tu estilo según contexto. Prueba de nuevo en otro momento."
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "Tipo: {{resultTitle}} ({{confidencePercent}}% de confianza)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "zh": {
+      "title": "四轴人格测试",
+      "description": "从四个核心维度测量你的默认行为倾向。",
+      "durationEstimate": "5-7 分钟",
+      "questions": {
+        "p1": {
+          "prompt": "理想周末通常会这样开始...",
+          "options": {
+            "p1_a": { "label": "和朋友见面、进行活跃交流。" },
+            "p1_b": { "label": "安静独处、个人爱好或一对一交流。" }
+          }
+        },
+        "p2": {
+          "prompt": "解决问题时，你更相信...",
+          "options": {
+            "p2_a": { "label": "具体事实和已验证的方法。" },
+            "p2_b": { "label": "模式、可能性和未来方向。" }
+          }
+        },
+        "p3": {
+          "prompt": "面对困难决策时，你优先考虑...",
+          "options": {
+            "p3_a": { "label": "逻辑一致性与规则公平。" },
+            "p3_b": { "label": "对人的影响与价值取向。" }
+          }
+        },
+        "p4": {
+          "prompt": "你对截止日期的态度是...",
+          "options": {
+            "p4_a": { "label": "喜欢明确计划并尽早完成。" },
+            "p4_b": { "label": "边走边调，保持选择空间。" }
+          }
+        },
+        "p5": {
+          "prompt": "选择所有经常符合你的描述。",
+          "description": "可多选。",
+          "options": {
+            "p5_a": { "label": "我会边说边完善想法。" },
+            "p5_b": { "label": "我会注意到别人忽略的实务细节。" },
+            "p5_c": { "label": "我会自然地构建未来情景。" },
+            "p5_d": { "label": "我会确认每个人都被倾听。" },
+            "p5_e": { "label": "我会提前组织以降低后续压力。" },
+            "p5_f": { "label": "我会让计划保持弹性直到必要时。" }
+          }
+        },
+        "p6": {
+          "prompt": "经历高社交强度的一周后，你感觉恢复得如何？",
+          "description": "滑块：1 = 很疲惫，5 = 很有能量。",
+          "labelLow": "疲惫",
+          "labelHigh": "有能量"
+        },
+        "p7": {
+          "prompt": "哪种描述更像你？",
+          "options": {
+            "p7_a": { "label": "偏好成熟方法和现实步骤。" },
+            "p7_b": { "label": "喜欢实验和概念跳跃。" }
+          }
+        },
+        "p8": {
+          "prompt": "团队冲突时，你的第一反应是...",
+          "options": {
+            "p8_a": { "label": "先澄清事实并建立理性路径。" },
+            "p8_b": { "label": "先读懂情绪并修复信任。" }
+          }
+        },
+        "p9": {
+          "prompt": "你的计划偏好是...",
+          "options": {
+            "p9_a": { "label": "结构化里程碑和明确承诺。" },
+            "p9_b": { "label": "根据新信息灵活即兴调整。" }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "pairs": [
+            { "label": "能量" },
+            { "label": "关注点" },
+            { "label": "决策" },
+            { "label": "结构" }
+          ],
+          "codes": {
+            "ISTJ": { "summary": "严谨可靠，重视标准与执行。" },
+            "ISFJ": { "summary": "稳定支持型，兼顾细节与关怀。" },
+            "INFJ": { "summary": "洞察型，连接远景与价值。" },
+            "INTJ": { "summary": "战略独立型，擅长系统优化。" },
+            "ISTP": { "summary": "冷静适应型，擅长高效解决现实问题。" },
+            "ISFP": { "summary": "真实细腻型，追求自然和谐。" },
+            "INFP": { "summary": "价值驱动型，强调意义与内在一致。" },
+            "INTP": { "summary": "分析探索型，偏好概念深度。" },
+            "ESTP": { "summary": "果断务实型，快速读取情境。" },
+            "ESFP": { "summary": "外向体验型，带动氛围与活力。" },
+            "ENFP": { "summary": "创意连接型，擅长激发人与想法。" },
+            "ENTP": { "summary": "创新辩证型，乐于挑战假设。" },
+            "ESTJ": { "summary": "组织执行型，强调结构与落地。" },
+            "ESFJ": { "summary": "协作协调型，重视群体联结。" },
+            "ENFJ": {
+              "summary": "共情引导型，推动共同成长。",
+              "copyBlocks": [
+                { "text": "你展现出以人为本的领导力，并兼具邻近类型特征。" },
+                { "text": "你的结果明显指向关系导向与价值导向的领导方式。" }
+              ]
+            },
+            "ENTJ": { "summary": "目标驱动型，善于统一系统与行动。" }
+          },
+          "fallback": {
+            "title": "均衡轴向组合",
+            "summary": "你的各轴分数接近，呈现混合型特征。",
+            "details": "你可能会因情境切换风格。可在不同状态下重测。"
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "类型：{{resultTitle}}（置信度 {{confidencePercent}}%）",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "ja": {
+      "title": "4軸パーソナリティ",
+      "description": "エネルギー・認知・意思決定・計画の4軸で基本傾向を測定します。",
+      "durationEstimate": "5-7分",
+      "questions": {
+        "p1": {
+          "prompt": "理想の週末は、たいてい次のどちらから始まりますか？",
+          "options": {
+            "p1_a": { "label": "人と会って活発に会話する。" },
+            "p1_b": { "label": "静かな時間、個人の趣味、または1対1。" }
+          }
+        },
+        "p2": {
+          "prompt": "問題解決でより信頼するのは？",
+          "options": {
+            "p2_a": { "label": "具体的な事実と実績のある方法。" },
+            "p2_b": { "label": "パターン、可能性、将来の見通し。" }
+          }
+        },
+        "p3": {
+          "prompt": "難しい判断で優先するのは？",
+          "options": {
+            "p3_a": { "label": "一貫した論理とルールの公平性。" },
+            "p3_b": { "label": "人への影響と価値観。" }
+          }
+        },
+        "p4": {
+          "prompt": "締切に対するあなたの感覚は？",
+          "options": {
+            "p4_a": { "label": "明確な計画で早めに締めたい。" },
+            "p4_b": { "label": "状況に合わせて柔軟に進めたい。" }
+          }
+        },
+        "p5": {
+          "prompt": "自分に当てはまるものをすべて選んでください。",
+          "description": "複数選択の質問です。",
+          "options": {
+            "p5_a": { "label": "考えを声に出しながら発展させる。" },
+            "p5_b": { "label": "他人が見落とす実務的な細部に気づく。" },
+            "p5_c": { "label": "将来の可能性を自然に描く。" },
+            "p5_d": { "label": "全員が尊重されているか確認する。" },
+            "p5_e": { "label": "早めの整理で後のストレスを減らす。" },
+            "p5_f": { "label": "必要な時まで計画を柔軟に保つ。" }
+          }
+        },
+        "p6": {
+          "prompt": "社交的な一週間の後、どの程度回復していますか？",
+          "description": "スライダー: 1 = 消耗, 5 = 活力が出る",
+          "labelLow": "消耗",
+          "labelHigh": "活力"
+        },
+        "p7": {
+          "prompt": "どちらの説明がより近いですか？",
+          "options": {
+            "p7_a": { "label": "実績ある方法と現実的な手順を好む。" },
+            "p7_b": { "label": "実験や概念的ジャンプを楽しむ。" }
+          }
+        },
+        "p8": {
+          "prompt": "チーム内の対立で最初にすることは？",
+          "options": {
+            "p8_a": { "label": "事実を整理し合理的な道筋を作る。" },
+            "p8_b": { "label": "感情を読み取り信頼回復を優先する。" }
+          }
+        },
+        "p9": {
+          "prompt": "計画スタイルはどちらに近いですか？",
+          "options": {
+            "p9_a": { "label": "構造化されたマイルストーンと明確な約束。" },
+            "p9_b": { "label": "新情報に応じた柔軟な即興対応。" }
+          }
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "pairs": [
+            { "label": "エネルギー" },
+            { "label": "認知" },
+            { "label": "判断" },
+            { "label": "構造" }
+          ],
+          "codes": {
+            "ISTJ": { "summary": "堅実で信頼性が高く、基準と実行を重視します。" },
+            "ISFJ": { "summary": "献身的で安定し、細部と配慮を両立します。" },
+            "INFJ": { "summary": "洞察的で、長期ビジョンと価値を結びます。" },
+            "INTJ": { "summary": "戦略的で独立志向。仕組み最適化に強いタイプです。" },
+            "ISTP": { "summary": "冷静で適応力が高く、実務課題を効率よく解きます。" },
+            "ISFP": { "summary": "自然体で感受性が高く、調和を大切にします。" },
+            "INFP": { "summary": "価値観重視で、意味と内的一貫性を求めます。" },
+            "INTP": { "summary": "分析的で好奇心が強く、概念の深さを楽しみます。" },
+            "ESTP": { "summary": "実践的で判断が速く、現場で力を発揮します。" },
+            "ESFP": { "summary": "表現力が高く自発的で、場に活力を与えます。" },
+            "ENFP": { "summary": "創造的で人間関係重視。発想をつなげて前進させます。" },
+            "ENTP": { "summary": "発明的で戦略的。前提を問い可能性を広げます。" },
+            "ESTJ": { "summary": "組織的で明快。構造化と遂行に強みがあります。" },
+            "ESFJ": { "summary": "協調的で安定。チーム連携を整えるのが得意です。" },
+            "ENFJ": {
+              "summary": "共感的なリーダーシップで成長を導くタイプです。",
+              "copyBlocks": [
+                { "text": "人間関係中心のリーダーシップに、近接タイプのバランスも見られます。" },
+                { "text": "対人志向と価値志向の意思決定が強く表れています。" }
+              ]
+            },
+            "ENTJ": { "summary": "決断力が高く目標志向。人と仕組みを前進させます。" }
+          },
+          "fallback": {
+            "title": "バランス型4軸ミックス",
+            "summary": "各軸が近く、ミックス型の結果です。",
+            "details": "状況でスタイルを使い分ける傾向があります。別のタイミングで再受験も有効です。"
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "タイプ: {{resultTitle}} (信頼度 {{confidencePercent}}%)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    }
+  }
+}

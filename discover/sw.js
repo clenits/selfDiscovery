@@ -1,17 +1,22 @@
-const CACHE_NAME = "self-discovery-v1";
+const CACHE_NAME = "self-discovery-v2";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
   "./data/registry.json",
+  "./data/i18n/registry.json",
+  "./data/i18n/quizzes/hogwarts-house.json",
+  "./data/i18n/quizzes/personality-4axis.json",
   "./data/hogwarts-house.json",
   "./data/personality-4axis.json",
   "./js/lib/dom.js",
   "./js/lib/components.js",
+  "./js/lib/i18n.js",
   "./js/lib/router.js",
   "./js/lib/meta.js",
   "./js/lib/storage.js",
+  "./js/lib/quiz-localize.js",
   "./js/lib/quiz-validator.js",
   "./js/lib/quiz-loader.js",
   "./js/lib/quiz-engine.js",

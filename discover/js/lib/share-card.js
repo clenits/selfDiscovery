@@ -11,6 +11,26 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight, maxLines = 5) {
     const width = ctx.measureText(trial).width;
     const isLastWord = idx === words.length - 1;
 
+    if (width > maxWidth && !line) {
+      for (const ch of word) {
+        const chunkTrial = `${line}${ch}`;
+        if (ctx.measureText(chunkTrial).width > maxWidth && line) {
+          if (usedLines < maxLines) {
+            ctx.fillText(line, x, y + usedLines * lineHeight);
+          }
+          usedLines += 1;
+          line = ch;
+        } else {
+          line = chunkTrial;
+        }
+      }
+      if (idx === words.length - 1 && usedLines < maxLines) {
+        ctx.fillText(line, x, y + usedLines * lineHeight);
+        usedLines += 1;
+      }
+      return;
+    }
+
     if (width > maxWidth && line) {
       if (usedLines < maxLines) {
         ctx.fillText(line, x, y + usedLines * lineHeight);
@@ -113,6 +133,8 @@ export function createResultCanvas({
   confidencePercent,
   link,
   accent = "#2168e5",
+  confidenceLabel = "Confidence",
+  brandLabel = "Self Discovery Lab",
 }) {
   const canvas = document.createElement("canvas");
   canvas.width = 1200;
@@ -130,7 +152,7 @@ export function createResultCanvas({
 
   ctx.fillStyle = "#b8d5ff";
   ctx.font = "600 28px Avenir Next";
-  ctx.fillText("Self Discovery Lab", 96, 115);
+  ctx.fillText(brandLabel, 96, 115);
 
   ctx.fillStyle = "#ffffff";
   ctx.font = "700 54px Avenir Next";
@@ -153,7 +175,7 @@ export function createResultCanvas({
 
   ctx.font = "700 24px Nunito Sans";
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(`Confidence: ${confidencePercent}%`, 96, summaryBottom + 34);
+  ctx.fillText(`${confidenceLabel}: ${confidencePercent}%`, 96, summaryBottom + 34);
 
   ctx.font = "500 20px Nunito Sans";
   ctx.fillStyle = "#d8e6ff";

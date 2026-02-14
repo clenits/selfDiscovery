@@ -110,7 +110,7 @@ function renderAxisBreakdown(result) {
   return rows;
 }
 
-function renderResultView({ quiz, session, refresh }) {
+function renderResultView({ quiz, session, refresh, t }) {
   const result = session.result;
   const sharePayload = buildSharePayload({
     quizId: quiz.id,
@@ -136,18 +136,17 @@ function renderResultView({ quiz, session, refresh }) {
     description: result.summary,
     children: [
       result.details ? el("p", { text: result.details }) : null,
-      el("p", { className: "quiet", text: `Confidence: ${result.confidencePercent}%` }),
+      el("p", { className: "quiet", text: `${t("common.confidence")}: ${result.confidencePercent}%` }),
       result.code
-        ? el("p", { className: "quiet", text: `Code: ${result.code}` })
+        ? el("p", { className: "quiet", text: `${t("common.code")}: ${result.code}` })
         : null,
       renderAxisBreakdown(result),
     ],
   });
 
   const sharePreview = Card({
-    title: "Shareable Card",
-    description:
-      "Generate a local image via canvas and copy a hash-link that reproduces this result view.",
+    title: t("quiz.shareableCardTitle"),
+    description: t("quiz.shareableCardDescription"),
     children: [
       el("article", { className: "result-card-preview" }, [
         el("h3", { text: shareCardTitle }),
@@ -156,7 +155,7 @@ function renderResultView({ quiz, session, refresh }) {
       ]),
       el("div", { className: "row-actions" }, [
         Button({
-          label: "Download PNG",
+          label: t("quiz.downloadPng"),
           variant: "primary",
           onClick: () => {
             const canvas = createResultCanvas({
@@ -166,31 +165,33 @@ function renderResultView({ quiz, session, refresh }) {
               confidencePercent: result.confidencePercent,
               link: shareUrl,
               accent: quiz.shareCard.accent,
+              confidenceLabel: t("common.confidence"),
+              brandLabel: t("app.brand"),
             });
             downloadCanvas(canvas, `${quiz.id}-result.png`);
           },
         }),
         Button({
-          label: "Copy Share Link",
+          label: t("quiz.copyShareLink"),
           onClick: async () => {
             const copied = await copyText(shareUrl);
-            session.notice = copied ? "Share link copied." : "Copy failed in this browser.";
+            session.notice = copied ? t("quiz.shareCopied") : t("common.copyFailed");
             refresh();
           },
         }),
-        Button({ label: "Open Share View", href: `#/share?d=${encodedPayload}` }),
+        Button({ label: t("quiz.openShareView"), href: `#/share?d=${encodedPayload}` }),
       ]),
       session.notice ? el("p", { className: "quiet", text: session.notice }) : null,
     ],
   });
 
   const actions = Card({
-    title: "What Next",
-    description: "Save remains local to this browser only.",
+    title: t("quiz.whatNextTitle"),
+    description: t("quiz.whatNextDescription"),
     children: [
       el("div", { className: "row-actions" }, [
         Button({
-          label: "Retake Quiz",
+          label: t("quiz.retakeQuiz"),
           onClick: () => {
             session.currentIndex = 0;
             session.answers = createInitialAnswers(quiz);
@@ -200,8 +201,8 @@ function renderResultView({ quiz, session, refresh }) {
             refresh();
           },
         }),
-        Button({ label: "Back to Tests", href: "#/tests" }),
-        Button({ label: "My Profile", href: "#/profile" }),
+        Button({ label: t("common.backToTests"), href: "#/tests" }),
+        Button({ label: t("app.nav.profile"), href: "#/profile" }),
       ]),
     ],
   });
@@ -209,29 +210,27 @@ function renderResultView({ quiz, session, refresh }) {
   return el("div", { className: "surface-grid" }, [resultCard, sharePreview, actions]);
 }
 
-export async function renderQuizView({ quizId, registry, appState, refresh }) {
+export async function renderQuizView({ quizId, registry, appState, locale, t, refresh }) {
   let quiz;
   try {
-    quiz = await loadQuizById(quizId, registry);
+    quiz = await loadQuizById(quizId, registry, locale);
   } catch (error) {
     const detail =
-      error instanceof QuizLoadError
-        ? error.details
-        : ["Unexpected error while loading quiz."];
+      error instanceof QuizLoadError ? error.details : [t("quiz.unexpectedLoadError")];
     return el("div", { className: "surface-grid" }, [
       Card({
-        title: "Quiz Unavailable",
-        description: `Could not load '${quizId}'.`,
-        children: [ErrorBox("Validation or loading errors", detail)],
+        title: t("quiz.quizUnavailable"),
+        description: t("quiz.couldNotLoad", { quizId }),
+        children: [ErrorBox(t("quiz.validationErrors"), detail)],
       }),
-      Button({ label: "Back to Tests", href: "#/tests" }),
+      Button({ label: t("common.backToTests"), href: "#/tests" }),
     ]);
   }
 
   const session = getSession(appState, quiz);
 
   if (session.result) {
-    return renderResultView({ quiz, session, refresh });
+    return renderResultView({ quiz, session, refresh, t });
   }
 
   const question = quiz.questions[session.currentIndex];
@@ -247,7 +246,10 @@ export async function renderQuizView({ quizId, registry, appState, refresh }) {
   const progress = ProgressBar({
     value: session.currentIndex + 1,
     max: total,
-    label: `Question ${session.currentIndex + 1} of ${total}`,
+    label: t("common.questionOf", {
+      current: session.currentIndex + 1,
+      total,
+    }),
   });
 
   const questionCard = Question({
@@ -256,11 +258,16 @@ export async function renderQuizView({ quizId, registry, appState, refresh }) {
     prompt: question.prompt,
     description: question.description,
     inputControl: renderQuestionControl(question, answer, setAnswer),
+    questionLabel: t("common.questionOf", {
+      current: session.currentIndex + 1,
+      total,
+    }),
+    requiredLabel: t("common.answerRequired"),
   });
 
   const moveNext = () => {
     if (!isQuestionAnswered(question, session.answers[question.id])) {
-      session.error = "Choose at least one answer to continue.";
+      session.error = t("quiz.chooseAnswerError");
       refresh();
       return;
     }
@@ -306,26 +313,26 @@ export async function renderQuizView({ quizId, registry, appState, refresh }) {
     children: [
       el("div", { className: "field-inline" }, [
         el("span", { className: "pill", text: quiz.durationEstimate }),
-        el("span", { className: "quiet", text: "Local-only answers" }),
+        el("span", { className: "quiet", text: t("common.localOnlyAnswers") }),
       ]),
       progress,
     ],
   });
 
   const navActions = el("section", { className: "card stack-sm" }, [
-    session.error ? ErrorBox("Question required", [session.error]) : null,
+    session.error ? ErrorBox(t("quiz.questionRequired"), [session.error]) : null,
     el("div", { className: "row-actions" }, [
       Button({
-        label: "Back",
+        label: t("quiz.back"),
         onClick: moveBack,
         attrs: { disabled: session.currentIndex === 0 ? "true" : undefined },
       }),
       Button({
-        label: session.currentIndex === total - 1 ? "Finish" : "Next",
+        label: session.currentIndex === total - 1 ? t("quiz.finish") : t("quiz.next"),
         variant: "primary",
         onClick: moveNext,
       }),
-      Button({ label: "Quit", href: "#/tests" }),
+      Button({ label: t("quiz.quit"), href: "#/tests" }),
     ]),
   ]);
 

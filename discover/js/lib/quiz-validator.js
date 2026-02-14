@@ -294,6 +294,9 @@ export function validateRegistry(registry) {
       ensureString(test.description, `${path}.description`, errors);
       ensureString(test.durationEstimate, `${path}.durationEstimate`, errors);
       ensureString(test.path, `${path}.path`, errors);
+      if (test.i18nPath !== undefined) {
+        ensureString(test.i18nPath, `${path}.i18nPath`, errors);
+      }
     });
   }
 
