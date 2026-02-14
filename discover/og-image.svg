@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Self Discovery Lab</title>
+  <desc id="desc">Offline self-discovery quizzes with local-only results.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f45" />
+      <stop offset="100%" stop-color="#1f7ccf" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="70" y="70" width="1060" height="490" rx="28" fill="rgba(255,255,255,0.12)" />
+  <text x="120" y="210" fill="#dbeafe" font-family="Avenir Next, Segoe UI, sans-serif" font-size="34" font-weight="600">
+    Self Discovery Lab
+  </text>
+  <text x="120" y="315" fill="#ffffff" font-family="Avenir Next, Segoe UI, sans-serif" font-size="78" font-weight="700">
+    Learn About Yourself
+  </text>
+  <text x="120" y="395" fill="#dbeafe" font-family="Nunito Sans, Segoe UI, sans-serif" font-size="34" font-weight="500">
+    Offline quizzes · Local-only profile · Shareable results
+  </text>
+  <text x="120" y="510" fill="#c7ddff" font-family="Nunito Sans, Segoe UI, sans-serif" font-size="26" font-weight="500">
+    https://selfdiscoverylab.org/discover/
+  </text>
+</svg>
