@@ -8,6 +8,7 @@ on:
       - "**/index.html"
       - "discover/app.js"
       - "discover/data/registry.json"
+      - "tests/thinking-os/questions.json"
       - "tools/generate-sitemap.mjs"
       - ".github/workflows/update-sitemap.yml"
   workflow_dispatch:

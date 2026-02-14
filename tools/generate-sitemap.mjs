@@ -8,6 +8,7 @@ const repoRoot = path.resolve(__dirname, "..");
 
 const SITE_ORIGIN = process.env.SITE_ORIGIN || "https://selfdiscoverylab.org";
 const DISCOVER_BASE = "/discover/";
+const THINKING_TEST_BASE = "/tests/thinking-os/";
 
 function toIsoDate(date) {
   return date.toISOString().split("T")[0];
@@ -24,7 +25,7 @@ function parseRoutePatterns(appJsSource) {
   return patterns;
 }
 
-function buildViewUrls(routePatterns, tests) {
+function buildDiscoverUrls(routePatterns, tests) {
   const urls = [];
 
   routePatterns.forEach((pattern) => {
@@ -49,31 +50,60 @@ function buildViewUrls(routePatterns, tests) {
     }
   });
 
-  return [...new Set(urls)];
+  return urls;
+}
+
+function buildThinkingOsUrls(thinkingConfig) {
+  const urls = [`${SITE_ORIGIN}${THINKING_TEST_BASE}`];
+  urls.push(`${SITE_ORIGIN}${THINKING_TEST_BASE}quiz.html`);
+
+  const results = Array.isArray(thinkingConfig.resultTypes)
+    ? thinkingConfig.resultTypes
+    : [];
+
+  results.forEach((type) => {
+    urls.push(`${SITE_ORIGIN}${THINKING_TEST_BASE}result/${encodeURIComponent(type.id)}/`);
+  });
+
+  return urls;
 }
 
 function routePriority(url) {
-  if (url.endsWith(`${DISCOVER_BASE}`)) {
+  if (url.endsWith(`${DISCOVER_BASE}`) || url.endsWith(`${THINKING_TEST_BASE}`)) {
     return "1.0";
   }
-  if (url.includes("#/tests") || url.includes("#/profile")) {
+
+  if (url.includes("#/tests") || url.includes("#/profile") || url.includes("quiz.html")) {
     return "0.9";
   }
-  if (url.includes("#/quiz/")) {
+
+  if (url.includes("#/quiz/") || url.includes("/result/")) {
     return "0.8";
   }
+
   return "0.7";
 }
 
 async function generateSitemap() {
   const appJs = await readFile(path.join(repoRoot, "discover", "app.js"), "utf8");
-  const registry = JSON.parse(
+  const discoverRegistry = JSON.parse(
     await readFile(path.join(repoRoot, "discover", "data", "registry.json"), "utf8")
   );
+  const thinkingConfig = JSON.parse(
+    await readFile(path.join(repoRoot, "tests", "thinking-os", "questions.json"), "utf8")
+  );
 
-  const tests = Array.isArray(registry.tests) ? registry.tests : [];
-  const routePatterns = parseRoutePatterns(appJs);
-  const urls = buildViewUrls(routePatterns, tests);
+  const discoverTests = Array.isArray(discoverRegistry.tests)
+    ? discoverRegistry.tests
+    : [];
+  const discoverRoutePatterns = parseRoutePatterns(appJs);
+
+  const allUrls = [
+    ...buildDiscoverUrls(discoverRoutePatterns, discoverTests),
+    ...buildThinkingOsUrls(thinkingConfig),
+  ];
+
+  const urls = [...new Set(allUrls)].sort((a, b) => a.localeCompare(b));
 
   const lastmod = toIsoDate(new Date());
   const lines = [

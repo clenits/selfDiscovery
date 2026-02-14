@@ -7,7 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://selfdiscoverylab.org/discover/#/tests</loc>
+    <loc>https://selfdiscoverylab.org/discover/#/profile</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -25,15 +25,57 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://selfdiscoverylab.org/discover/#/profile</loc>
+    <loc>https://selfdiscoverylab.org/discover/#/share</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://selfdiscoverylab.org/discover/#/tests</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://selfdiscoverylab.org/discover/#/share</loc>
+    <loc>https://selfdiscoverylab.org/tests/thinking-os/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://selfdiscoverylab.org/tests/thinking-os/quiz.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://selfdiscoverylab.org/tests/thinking-os/result/analyst/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://selfdiscoverylab.org/tests/thinking-os/result/catalyst/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://selfdiscoverylab.org/tests/thinking-os/result/explorer/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://selfdiscoverylab.org/tests/thinking-os/result/strategist/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://selfdiscoverylab.org/tests/thinking-os/result/synthesizer/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
