@@ -1,7 +1,7 @@
 {
   "id": "personality-4axis",
-  "title": "4-Axis Personality",
-  "description": "Measure your default tendencies across four core personality axes.",
+  "title": "MBTI Test",
+  "description": "Measure your MBTI tendencies across energy, perception, decisions, and planning.",
   "durationEstimate": "5-7 minutes",
   "questions": [
     {

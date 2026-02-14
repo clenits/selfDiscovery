@@ -11,8 +11,8 @@
     },
     {
       "id": "personality-4axis",
-      "title": "4-Axis Personality",
-      "description": "Find your 4-axis style across energy, focus, decisions, and planning.",
+      "title": "MBTI Test",
+      "description": "Discover your MBTI style across energy, perception, decisions, and planning.",
       "durationEstimate": "5-7 min",
       "tags": ["personality", "self-reflection"],
       "path": "./data/personality-4axis.json",

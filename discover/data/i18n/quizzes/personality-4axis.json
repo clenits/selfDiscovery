@@ -1,8 +1,8 @@
 {
   "locales": {
     "ko": {
-      "title": "4축 성격 유형",
-      "description": "에너지, 인식, 판단, 계획의 네 축에서 기본 성향을 확인합니다.",
+      "title": "MBTI 검사",
+      "description": "에너지, 인식, 판단, 계획 관점에서 MBTI 기본 성향을 확인합니다.",
       "durationEstimate": "5-7분",
       "questions": {
         "p1": {
@@ -119,8 +119,8 @@
       }
     },
     "es": {
-      "title": "Personalidad de 4 Ejes",
-      "description": "Mide tus tendencias por defecto en cuatro ejes de personalidad.",
+      "title": "Prueba MBTI",
+      "description": "Mide tus tendencias MBTI en energía, percepción, decisiones y planificación.",
       "durationEstimate": "5-7 min",
       "questions": {
         "p1": {
@@ -237,8 +237,8 @@
       }
     },
     "zh": {
-      "title": "四轴人格测试",
-      "description": "从四个核心维度测量你的默认行为倾向。",
+      "title": "MBTI 测试",
+      "description": "从能量、认知、决策和计划维度测量你的 MBTI 倾向。",
       "durationEstimate": "5-7 分钟",
       "questions": {
         "p1": {
@@ -355,8 +355,8 @@
       }
     },
     "ja": {
-      "title": "4軸パーソナリティ",
-      "description": "エネルギー・認知・意思決定・計画の4軸で基本傾向を測定します。",
+      "title": "MBTI診断",
+      "description": "エネルギー・認知・意思決定・計画の観点でMBTI傾向を測定します。",
       "durationEstimate": "5-7分",
       "questions": {
         "p1": {
@@ -460,7 +460,7 @@
             "ENTJ": { "summary": "決断力が高く目標志向。人と仕組みを前進させます。" }
           },
           "fallback": {
-            "title": "バランス型4軸ミックス",
+            "title": "バランス型MBTIミックス",
             "summary": "各軸が近く、ミックス型の結果です。",
             "details": "状況でスタイルを使い分ける傾向があります。別のタイミングで再受験も有効です。"
           }

@@ -352,7 +352,6 @@ const router = new Router({
     }
 
     appNode.append(node);
-    appNode.focus();
   },
 });
 
