@@ -13,6 +13,12 @@
           "description": "에너지, 인식, 의사결정, 계획 기준으로 MBTI 성향을 확인합니다.",
           "durationEstimate": "5-7분",
           "tags": ["성격", "자기이해"]
+        },
+        "thinking-os": {
+          "title": "사고 운영체제 테스트",
+          "description": "의사결정과 문제 해결 흐름으로 사고 운영체제 성향을 확인합니다.",
+          "durationEstimate": "3-5분",
+          "tags": ["사고유형", "의사결정", "자기이해"]
         }
       }
     },
@@ -29,6 +35,12 @@
           "description": "Descubre tu estilo en energía, enfoque, decisiones y planificación.",
           "durationEstimate": "5-7 min",
           "tags": ["personalidad", "autoconocimiento"]
+        },
+        "thinking-os": {
+          "title": "Prueba de Sistema de Pensamiento",
+          "description": "Descubre tu estilo de pensamiento para decidir y resolver problemas.",
+          "durationEstimate": "3-5 min",
+          "tags": ["estilo mental", "decisiones", "autoconocimiento"]
         }
       }
     },
@@ -45,6 +57,12 @@
           "description": "从能量、认知、决策与计划四个维度了解你的风格。",
           "durationEstimate": "5-7 分钟",
           "tags": ["人格", "自我认知"]
+        },
+        "thinking-os": {
+          "title": "思维操作系统测试",
+          "description": "通过决策与解题方式识别你的思维操作系统风格。",
+          "durationEstimate": "3-5 分钟",
+          "tags": ["思维风格", "决策", "自我认知"]
         }
       }
     },
@@ -61,6 +79,12 @@
           "description": "エネルギー、認知、意思決定、計画の観点でMBTI傾向を確認します。",
           "durationEstimate": "5-7分",
           "tags": ["性格", "自己理解"]
+        },
+        "thinking-os": {
+          "title": "思考OSテスト",
+          "description": "意思決定と問題解決の傾向から思考OSを確認します。",
+          "durationEstimate": "3-5分",
+          "tags": ["思考タイプ", "意思決定", "自己理解"]
         }
       }
     }

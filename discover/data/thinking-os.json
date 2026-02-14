@@ -1,0 +1,319 @@
+{
+  "id": "thinking-os",
+  "title": "Thinking OS Quiz",
+  "description": "Identify your default thinking operating style through decision and problem-solving patterns.",
+  "durationEstimate": "3-5 minutes",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "When solving a problem, I begin by making a plan or checklist.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "strategist": 1 },
+        "2": { "strategist": 2 },
+        "3": { "strategist": 3 },
+        "4": { "strategist": 4 },
+        "5": { "strategist": 5 }
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "When a new idea appears, I want to test it right away.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "explorer": 1 },
+        "2": { "explorer": 2 },
+        "3": { "explorer": 3 },
+        "4": { "explorer": 4 },
+        "5": { "explorer": 5 }
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "I enjoy analyzing data and extracting meaning from it.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "analyst": 1 },
+        "2": { "analyst": 2 },
+        "3": { "analyst": 3 },
+        "4": { "analyst": 4 },
+        "5": { "analyst": 5 }
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "Rather than exploring many paths, I choose one and focus deeply.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "catalyst": 1 },
+        "2": { "catalyst": 2 },
+        "3": { "catalyst": 3 },
+        "4": { "catalyst": 4 },
+        "5": { "catalyst": 5 }
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "Even in uncertainty, I tend to move based on intuition.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "synthesizer": 1 },
+        "2": { "synthesizer": 2 },
+        "3": { "synthesizer": 3 },
+        "4": { "synthesizer": 4 },
+        "5": { "synthesizer": 5 }
+      }
+    },
+    {
+      "id": "q6",
+      "prompt": "I prefer breaking complex issues into smaller structured parts.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "strategist": 1 },
+        "2": { "strategist": 2 },
+        "3": { "strategist": 3 },
+        "4": { "strategist": 4 },
+        "5": { "strategist": 5 }
+      }
+    },
+    {
+      "id": "q7",
+      "prompt": "I often prioritize emotions and context before pure logic.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "synthesizer": 1 },
+        "2": { "synthesizer": 2 },
+        "3": { "synthesizer": 3 },
+        "4": { "synthesizer": 4 },
+        "5": { "synthesizer": 5 }
+      }
+    },
+    {
+      "id": "q8",
+      "prompt": "I actively try new methods instead of sticking to existing ones.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "explorer": 1 },
+        "2": { "explorer": 2 },
+        "3": { "explorer": 3 },
+        "4": { "explorer": 4 },
+        "5": { "explorer": 5 }
+      }
+    },
+    {
+      "id": "q9",
+      "prompt": "To hit goals, I quickly set priorities and move on them.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "strategist": 1, "catalyst": 1 },
+        "2": { "strategist": 2, "catalyst": 2 },
+        "3": { "strategist": 3, "catalyst": 3 },
+        "4": { "strategist": 4, "catalyst": 4 },
+        "5": { "strategist": 5, "catalyst": 5 }
+      }
+    },
+    {
+      "id": "q10",
+      "prompt": "I invest time to understand problem details before deciding.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "analyst": 1 },
+        "2": { "analyst": 2 },
+        "3": { "analyst": 3 },
+        "4": { "analyst": 4 },
+        "5": { "analyst": 5 }
+      }
+    },
+    {
+      "id": "q11",
+      "prompt": "In collaboration, I actively integrate others' viewpoints.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "synthesizer": 1 },
+        "2": { "synthesizer": 2 },
+        "3": { "synthesizer": 3 },
+        "4": { "synthesizer": 4 },
+        "5": { "synthesizer": 5 }
+      }
+    },
+    {
+      "id": "q12",
+      "prompt": "I like open-ended questions that have no single right answer.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Strongly Disagree",
+      "labelHigh": "Strongly Agree",
+      "weightsByValue": {
+        "1": { "explorer": 1 },
+        "2": { "explorer": 2 },
+        "3": { "explorer": 3 },
+        "4": { "explorer": 4 },
+        "5": { "explorer": 5 }
+      }
+    }
+  ],
+  "scoring": {
+    "model": "dimension-sum",
+    "dimensions": ["strategist", "explorer", "analyst", "catalyst", "synthesizer"],
+    "resultMapping": {
+      "type": "top-dimension",
+      "items": {
+        "strategist": {
+          "title": "Strategist",
+          "summary": "Structured planner who designs outcomes with clear priorities.",
+          "details": "You break challenges into systems and sequence action deliberately. You tend to minimize uncertainty before execution.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "You show consistent planning instincts while still adapting to context."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A strong Strategist signal: your responses repeatedly prioritize structure and sequencing."
+            }
+          ]
+        },
+        "explorer": {
+          "title": "Explorer",
+          "summary": "Adaptive experimenter who expands options through creative trials.",
+          "details": "You quickly test possibilities, reframe constraints, and keep your approach flexible under changing conditions.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "Your profile shows exploratory thinking with openness to new paths."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A strong Explorer signal: you repeatedly choose novelty, experimentation, and range."
+            }
+          ]
+        },
+        "analyst": {
+          "title": "Analyst",
+          "summary": "Detail-centered thinker who improves accuracy through evidence.",
+          "details": "You strengthen decisions with data, verification, and careful decomposition of complex issues.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "Your responses suggest analytical rigor with strong detail awareness."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A strong Analyst signal: you consistently choose depth, precision, and evidence."
+            }
+          ]
+        },
+        "catalyst": {
+          "title": "Catalyst",
+          "summary": "Momentum driver who converts decisions into execution quickly.",
+          "details": "You reduce inertia by committing early and aligning effort toward immediate progress and outcomes.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "You show action-oriented judgment and practical focus on progress."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A strong Catalyst signal: your pattern favors rapid prioritization and decisive movement."
+            }
+          ]
+        },
+        "synthesizer": {
+          "title": "Synthesizer",
+          "summary": "Integrative thinker who balances logic, context, and people.",
+          "details": "You connect viewpoints, weigh emotional and situational factors, and produce outcomes others can align around.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "Your responses indicate balanced integration across people and context."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A strong Synthesizer signal: you consistently combine perspectives into coherent direction."
+            }
+          ]
+        }
+      },
+      "fallback": {
+        "title": "Balanced Thinking Mix",
+        "summary": "Your responses are distributed across multiple thinking operating styles.",
+        "details": "You may adapt strongly by context. Retake later and compare across different situations."
+      }
+    }
+  },
+  "shareCard": {
+    "titleTemplate": "{{quizTitle}}",
+    "subtitleTemplate": "Result: {{resultTitle}} ({{confidencePercent}}% confidence)",
+    "footerTemplate": "{{resultSummary}}",
+    "accent": "#2f80ed"
+  }
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = "self-discovery-v2";
+const CACHE_NAME = "self-discovery-v3";
 const APP_ASSETS = [
   "./",
   "./index.html",
@@ -8,8 +8,10 @@ const APP_ASSETS = [
   "./data/i18n/registry.json",
   "./data/i18n/quizzes/hogwarts-house.json",
   "./data/i18n/quizzes/personality-4axis.json",
+  "./data/i18n/quizzes/thinking-os.json",
   "./data/hogwarts-house.json",
   "./data/personality-4axis.json",
+  "./data/thinking-os.json",
   "./js/lib/dom.js",
   "./js/lib/components.js",
   "./js/lib/i18n.js",

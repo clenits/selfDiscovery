@@ -1,0 +1,436 @@
+{
+  "locales": {
+    "ko": {
+      "title": "사고 운영체제 테스트",
+      "description": "의사결정 방식과 문제 해결 흐름을 바탕으로 당신의 사고 운영체제를 확인합니다.",
+      "durationEstimate": "3-5분",
+      "questions": {
+        "q1": {
+          "prompt": "문제 해결 시 먼저 계획표나 체크리스트를 만들고 시작한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q2": {
+          "prompt": "새로운 아이디어가 떠오르면 바로 실행에 옮기고 싶은 편이다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q3": {
+          "prompt": "데이터를 분석하고 의미를 도출하는 것이 재밌다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q4": {
+          "prompt": "여러 가능성을 고려하기보다는 하나를 선택해 집중한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q5": {
+          "prompt": "불확실한 상황에서도 직관적으로 움직이는 편이다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q6": {
+          "prompt": "문제를 체계적으로 작은 단위로 나누는 것을 선호한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q7": {
+          "prompt": "논리적 근거보다 사람의 감정과 맥락을 먼저 고려한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q8": {
+          "prompt": "기존 방식보다 새로운 방법을 찾아 시도하는 편이다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q9": {
+          "prompt": "목표 달성을 위해 빠르게 우선순위를 정하고 실행한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q10": {
+          "prompt": "문제의 세부 사항을 파악하기 위해 시간을 투자한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q11": {
+          "prompt": "협업할 때 상대의 의견을 적극적으로 반영한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        },
+        "q12": {
+          "prompt": "정답이 하나로 정해지지 않은 질문을 좋아한다.",
+          "labelLow": "전혀 아니다",
+          "labelHigh": "매우 그렇다"
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "strategist": {
+              "title": "Strategist",
+              "summary": "구조와 계획으로 결과를 설계하는 타입",
+              "details": "문제를 체계적으로 구조화하고 실행 순서를 설계합니다. 불확실성을 줄이며 예측 가능한 성과를 만드는 데 강점이 있습니다."
+            },
+            "explorer": {
+              "title": "Explorer",
+              "summary": "새로운 가능성을 빠르게 탐색하는 타입",
+              "details": "새로운 접근법을 빠르게 실험하고 가능성의 폭을 넓힙니다. 변화 속에서도 유연하게 방향을 전환합니다."
+            },
+            "analyst": {
+              "title": "Analyst",
+              "summary": "데이터와 디테일을 기반으로 판단하는 타입",
+              "details": "근거와 세부 검증을 통해 의사결정 정확도를 높입니다. 복잡한 문제를 세밀하게 분석하는 데 강합니다."
+            },
+            "catalyst": {
+              "title": "Catalyst",
+              "summary": "결정과 실행 속도로 흐름을 만드는 타입",
+              "details": "빠른 선택과 실행으로 정체를 줄이고 팀의 추진력을 만듭니다. 결과 도달 속도를 중시합니다."
+            },
+            "synthesizer": {
+              "title": "Synthesizer",
+              "summary": "맥락과 협업 관점을 통합하는 균형형 타입",
+              "details": "논리와 감정, 개인과 팀의 관점을 함께 고려해 지속 가능한 결론을 도출합니다."
+            }
+          },
+          "fallback": {
+            "title": "균형형 사고 믹스",
+            "summary": "여러 사고 유형의 점수가 고르게 나타났습니다.",
+            "details": "상황에 따라 스타일이 달라질 수 있습니다. 다른 시점에 다시 진행해 비교해보세요."
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "결과: {{resultTitle}} (신뢰도 {{confidencePercent}}%)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "es": {
+      "title": "Prueba de Sistema de Pensamiento",
+      "description": "Identifica tu sistema operativo mental según tu forma de decidir y resolver problemas.",
+      "durationEstimate": "3-5 min",
+      "questions": {
+        "q1": {
+          "prompt": "Cuando resuelvo un problema, empiezo haciendo un plan o una lista.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q2": {
+          "prompt": "Si surge una idea nueva, quiero probarla de inmediato.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q3": {
+          "prompt": "Disfruto analizar datos y extraer conclusiones.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q4": {
+          "prompt": "Prefiero elegir un camino y concentrarme, en lugar de explorar muchos.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q5": {
+          "prompt": "Incluso en la incertidumbre, suelo moverme por intuición.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q6": {
+          "prompt": "Prefiero dividir problemas complejos en partes pequeñas y estructuradas.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q7": {
+          "prompt": "Suelo priorizar emociones y contexto antes que lógica pura.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q8": {
+          "prompt": "Intento métodos nuevos en vez de quedarme con lo conocido.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q9": {
+          "prompt": "Para lograr objetivos, marco prioridades rápido y actúo.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q10": {
+          "prompt": "Invierto tiempo en entender los detalles antes de decidir.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q11": {
+          "prompt": "En colaboración, integro activamente la opinión de otras personas.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        },
+        "q12": {
+          "prompt": "Me gustan las preguntas abiertas sin una sola respuesta correcta.",
+          "labelLow": "Muy en desacuerdo",
+          "labelHigh": "Muy de acuerdo"
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "strategist": {
+              "title": "Strategist",
+              "summary": "Diseñas resultados con estructura y prioridades claras.",
+              "details": "Organizas problemas de forma sistemática y secuencias la ejecución con precisión."
+            },
+            "explorer": {
+              "title": "Explorer",
+              "summary": "Exploras posibilidades nuevas con flexibilidad y creatividad.",
+              "details": "Pruebas enfoques rápidamente y amplías opciones ante cambios del entorno."
+            },
+            "analyst": {
+              "title": "Analyst",
+              "summary": "Tomas decisiones con detalle, evidencia y verificación.",
+              "details": "Fortaleces la precisión mediante análisis de datos y descomposición de problemas complejos."
+            },
+            "catalyst": {
+              "title": "Catalyst",
+              "summary": "Conviertes decisiones en ejecución con gran velocidad.",
+              "details": "Reduces la inercia del equipo y priorizas el avance hacia resultados concretos."
+            },
+            "synthesizer": {
+              "title": "Synthesizer",
+              "summary": "Integras lógica, contexto y personas para equilibrar decisiones.",
+              "details": "Conectas perspectivas distintas y construyes salidas sostenibles para el grupo."
+            }
+          },
+          "fallback": {
+            "title": "Mezcla de Pensamiento Equilibrada",
+            "summary": "Tus respuestas se distribuyen entre varios estilos de pensamiento.",
+            "details": "Tu estilo puede cambiar según el contexto. Repite la prueba más adelante para comparar."
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "Resultado: {{resultTitle}} ({{confidencePercent}}% de confianza)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "zh": {
+      "title": "思维操作系统测试",
+      "description": "根据你的决策与问题解决方式，识别你的思维操作系统。",
+      "durationEstimate": "3-5 分钟",
+      "questions": {
+        "q1": {
+          "prompt": "解决问题时，我会先列出计划或清单。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q2": {
+          "prompt": "一旦有新想法，我会想立刻尝试。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q3": {
+          "prompt": "我喜欢分析数据并提炼出意义。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q4": {
+          "prompt": "相比考虑多个可能，我更倾向选一个并专注推进。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q5": {
+          "prompt": "即使在不确定情况下，我也常凭直觉行动。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q6": {
+          "prompt": "我偏好把复杂问题拆成更小的结构化部分。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q7": {
+          "prompt": "我常先考虑情绪和语境，再看纯逻辑。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q8": {
+          "prompt": "比起沿用旧方法，我更愿意尝试新方法。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q9": {
+          "prompt": "为了达成目标，我会快速设定优先级并执行。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q10": {
+          "prompt": "在做决定前，我会投入时间理解问题细节。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q11": {
+          "prompt": "协作时，我会主动吸收他人的观点。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        },
+        "q12": {
+          "prompt": "我喜欢没有唯一正确答案的开放性问题。",
+          "labelLow": "非常不同意",
+          "labelHigh": "非常同意"
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "strategist": {
+              "title": "Strategist",
+              "summary": "你擅长用结构和优先级来设计结果。",
+              "details": "你会系统化拆解问题并有节奏地推进执行，尽量降低不确定性。"
+            },
+            "explorer": {
+              "title": "Explorer",
+              "summary": "你以灵活和创造力快速探索新可能。",
+              "details": "你乐于快速试验新路径，并在变化中持续扩展选择空间。"
+            },
+            "analyst": {
+              "title": "Analyst",
+              "summary": "你以细节与证据提升判断准确度。",
+              "details": "你重视数据分析和论证过程，擅长处理复杂信息。"
+            },
+            "catalyst": {
+              "title": "Catalyst",
+              "summary": "你通过快速决策和执行推动进展。",
+              "details": "你能减少停滞，把注意力集中在落地与结果上。"
+            },
+            "synthesizer": {
+              "title": "Synthesizer",
+              "summary": "你整合逻辑、情境与协作观点形成平衡方案。",
+              "details": "你擅长连接不同立场，形成团队更容易对齐的结论。"
+            }
+          },
+          "fallback": {
+            "title": "平衡型思维组合",
+            "summary": "你的分数在多个思维风格上较为均衡。",
+            "details": "你的风格可能会随情境变化。建议在不同状态下再次测试比较。"
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "结果：{{resultTitle}}（置信度 {{confidencePercent}}%）",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    },
+    "ja": {
+      "title": "思考OSテスト",
+      "description": "意思決定と問題解決の傾向から、あなたの思考OSを確認します。",
+      "durationEstimate": "3-5分",
+      "questions": {
+        "q1": {
+          "prompt": "問題解決では、最初に計画表やチェックリストを作る。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q2": {
+          "prompt": "新しいアイデアが出たら、すぐ試したくなる。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q3": {
+          "prompt": "データを分析して意味を引き出すのが楽しい。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q4": {
+          "prompt": "複数案を広く見るより、1つを選んで集中する。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q5": {
+          "prompt": "不確実な状況でも、直感で動くことが多い。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q6": {
+          "prompt": "複雑な問題を小さく分解して整理するのが好きだ。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q7": {
+          "prompt": "純粋な論理より、感情や文脈を先に考えることが多い。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q8": {
+          "prompt": "既存のやり方より、新しい方法を試したい。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q9": {
+          "prompt": "目標達成のために、優先順位を素早く決めて動く。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q10": {
+          "prompt": "判断前に、問題の細部を理解するため時間をかける。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q11": {
+          "prompt": "協働では、相手の意見を積極的に取り入れる。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        },
+        "q12": {
+          "prompt": "正解が1つに決まらない問いが好きだ。",
+          "labelLow": "まったく当てはまらない",
+          "labelHigh": "とても当てはまる"
+        }
+      },
+      "scoring": {
+        "resultMapping": {
+          "items": {
+            "strategist": {
+              "title": "Strategist",
+              "summary": "構造化と優先順位設計で成果を組み立てるタイプ。",
+              "details": "課題を体系化し、実行順序を明確にして進める傾向があります。"
+            },
+            "explorer": {
+              "title": "Explorer",
+              "summary": "柔軟で創造的に新しい可能性を探るタイプ。",
+              "details": "新しいアプローチを素早く試し、変化に合わせて発想を広げます。"
+            },
+            "analyst": {
+              "title": "Analyst",
+              "summary": "根拠とディテールで判断精度を高めるタイプ。",
+              "details": "データと検証を重視し、複雑な情報を丁寧に扱います。"
+            },
+            "catalyst": {
+              "title": "Catalyst",
+              "summary": "決断と実行の速さで流れを作るタイプ。",
+              "details": "停滞を減らし、成果に向けて前進を生み出す推進力があります。"
+            },
+            "synthesizer": {
+              "title": "Synthesizer",
+              "summary": "論理・文脈・人の観点を統合するバランス型。",
+              "details": "異なる視点をつなぎ、納得度の高い結論にまとめる力があります。"
+            }
+          },
+          "fallback": {
+            "title": "バランス型思考ミックス",
+            "summary": "複数の思考スタイルにスコアが分散しています。",
+            "details": "状況によってスタイルが変わる可能性があります。別のタイミングで再受験して比較してください。"
+          }
+        }
+      },
+      "shareCard": {
+        "titleTemplate": "{{quizTitle}}",
+        "subtitleTemplate": "結果: {{resultTitle}} (信頼度 {{confidencePercent}}%)",
+        "footerTemplate": "{{resultSummary}}"
+      }
+    }
+  }
+}

@@ -17,6 +17,15 @@
       "tags": ["personality", "self-reflection"],
       "path": "./data/personality-4axis.json",
       "i18nPath": "./data/i18n/quizzes/personality-4axis.json"
+    },
+    {
+      "id": "thinking-os",
+      "title": "Thinking OS Quiz",
+      "description": "Identify your default decision-making and problem-solving operating style.",
+      "durationEstimate": "3-5 min",
+      "tags": ["decision-style", "problem-solving", "self-reflection"],
+      "path": "./data/thinking-os.json",
+      "i18nPath": "./data/i18n/quizzes/thinking-os.json"
     }
   ]
 }
