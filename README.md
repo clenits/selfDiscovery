@@ -33,3 +33,9 @@ Open `http://localhost:8080/discover/`.
 ```bash
 node discover/tools/validate-json.mjs
 ```
+
+## Generate sitemap
+
+```bash
+node tools/generate-sitemap.mjs
+```
