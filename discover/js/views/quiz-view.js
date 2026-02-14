@@ -23,15 +23,69 @@ import {
   fillTemplate,
 } from "../lib/share-card.js";
 
+function shuffleArray(items) {
+  const next = [...items];
+  for (let i = next.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [next[i], next[j]] = [next[j], next[i]];
+  }
+  return next;
+}
+
+function buildOptionOrderByQuestion(quiz) {
+  const order = {};
+  quiz.questions.forEach((question) => {
+    if (!Array.isArray(question.options) || !question.options.length) {
+      return;
+    }
+    order[question.id] = shuffleArray(question.options.map((option) => option.id));
+  });
+  return order;
+}
+
+function resetAttemptState(session, quiz) {
+  session.currentIndex = 0;
+  session.answers = createInitialAnswers(quiz);
+  session.result = null;
+  session.error = "";
+  session.notice = "";
+  // Keep scoring stable by shuffling display order only; option ids/weights stay untouched.
+  session.optionOrderByQuestion = buildOptionOrderByQuestion(quiz);
+}
+
+function resolveQuestionOptions(question, session) {
+  if (!Array.isArray(question.options) || !question.options.length) {
+    return [];
+  }
+
+  if (!session.optionOrderByQuestion) {
+    session.optionOrderByQuestion = {};
+  }
+
+  const optionById = new Map(question.options.map((option) => [option.id, option]));
+  const knownIds = new Set(question.options.map((option) => option.id));
+  const savedOrder = session.optionOrderByQuestion[question.id];
+  const isValidOrder =
+    Array.isArray(savedOrder) &&
+    savedOrder.length === question.options.length &&
+    savedOrder.every((id) => knownIds.has(id));
+
+  if (!isValidOrder) {
+    session.optionOrderByQuestion[question.id] = shuffleArray([...knownIds]);
+  }
+
+  return session.optionOrderByQuestion[question.id]
+    .map((id) => optionById.get(id))
+    .filter(Boolean);
+}
+
 function getSession(appState, quiz) {
   if (!appState.sessions[quiz.id]) {
-    appState.sessions[quiz.id] = {
-      currentIndex: 0,
-      answers: createInitialAnswers(quiz),
-      result: null,
-      error: "",
-      notice: "",
-    };
+    const session = {};
+    resetAttemptState(session, quiz);
+    appState.sessions[quiz.id] = session;
+  } else if (!appState.sessions[quiz.id].optionOrderByQuestion) {
+    appState.sessions[quiz.id].optionOrderByQuestion = buildOptionOrderByQuestion(quiz);
   }
   return appState.sessions[quiz.id];
 }
@@ -66,11 +120,11 @@ function renderSlider(question, value, onChange) {
   ]);
 }
 
-function renderQuestionControl(question, answer, setAnswer) {
+function renderQuestionControl(question, options, answer, setAnswer) {
   if (question.type === "single-choice") {
     return RadioList({
       name: question.id,
-      options: question.options,
+      options,
       value: answer,
       onChange: setAnswer,
       ariaLabel: question.prompt,
@@ -80,7 +134,7 @@ function renderQuestionControl(question, answer, setAnswer) {
   if (question.type === "multi-choice") {
     return RadioList({
       name: question.id,
-      options: question.options,
+      options,
       value: answer,
       onChange: setAnswer,
       ariaLabel: question.prompt,
@@ -193,11 +247,7 @@ function renderResultView({ quiz, session, refresh, t }) {
         Button({
           label: t("quiz.retakeQuiz"),
           onClick: () => {
-            session.currentIndex = 0;
-            session.answers = createInitialAnswers(quiz);
-            session.result = null;
-            session.error = "";
-            session.notice = "";
+            resetAttemptState(session, quiz);
             refresh();
           },
         }),
@@ -236,6 +286,7 @@ export async function renderQuizView({ quizId, registry, appState, locale, t, re
   const question = quiz.questions[session.currentIndex];
   const total = quiz.questions.length;
   const answer = session.answers[question.id];
+  const options = resolveQuestionOptions(question, session);
 
   const setAnswer = (nextValue) => {
     session.answers[question.id] = nextValue;
@@ -257,7 +308,7 @@ export async function renderQuizView({ quizId, registry, appState, locale, t, re
     total,
     prompt: question.prompt,
     description: question.description,
-    inputControl: renderQuestionControl(question, answer, setAnswer),
+    inputControl: renderQuestionControl(question, options, answer, setAnswer),
     questionLabel: t("common.questionOf", {
       current: session.currentIndex + 1,
       total,
