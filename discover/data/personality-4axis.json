@@ -1,0 +1,239 @@
+{
+  "id": "personality-4axis",
+  "title": "4-Axis Personality",
+  "description": "Measure your default tendencies across four core personality axes.",
+  "durationEstimate": "5-7 minutes",
+  "questions": [
+    {
+      "id": "p1",
+      "prompt": "Your ideal weekend usually starts with...",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "p1_a",
+          "label": "Plans with people and active conversations.",
+          "weights": { "E": 2, "I": 0 }
+        },
+        {
+          "id": "p1_b",
+          "label": "Quiet time, solo hobbies, or one-to-one connection.",
+          "weights": { "I": 2, "E": 0 }
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "prompt": "When solving a problem, you trust...",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "p2_a",
+          "label": "Concrete facts and what has worked before.",
+          "weights": { "S": 2, "N": 0 }
+        },
+        {
+          "id": "p2_b",
+          "label": "Patterns, possibilities, and future outcomes.",
+          "weights": { "N": 2, "S": 0 }
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "prompt": "In difficult decisions, you prioritize...",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "p3_a",
+          "label": "Consistency, objective logic, and fairness by rule.",
+          "weights": { "T": 2, "F": 0 }
+        },
+        {
+          "id": "p3_b",
+          "label": "People impact, values, and emotional context.",
+          "weights": { "F": 2, "T": 0 }
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "prompt": "How do you feel about deadlines?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "p4_a",
+          "label": "I like clear plans and early closure.",
+          "weights": { "J": 2, "P": 0 }
+        },
+        {
+          "id": "p4_b",
+          "label": "I adapt as I go and keep options open.",
+          "weights": { "P": 2, "J": 0 }
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "prompt": "Pick all statements that often match your style.",
+      "description": "Multi-choice question: select one or more.",
+      "type": "multi-choice",
+      "options": [
+        {
+          "id": "p5_a",
+          "label": "I think out loud while developing ideas.",
+          "weights": { "E": 1 }
+        },
+        {
+          "id": "p5_b",
+          "label": "I spot practical details others miss.",
+          "weights": { "S": 1 }
+        },
+        {
+          "id": "p5_c",
+          "label": "I naturally model future what-if scenarios.",
+          "weights": { "N": 1 }
+        },
+        {
+          "id": "p5_d",
+          "label": "I check whether everyone feels heard.",
+          "weights": { "F": 1 }
+        },
+        {
+          "id": "p5_e",
+          "label": "I organize early to reduce stress later.",
+          "weights": { "J": 1 }
+        },
+        {
+          "id": "p5_f",
+          "label": "I keep plans flexible until the last useful moment.",
+          "weights": { "P": 1 }
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "prompt": "After a socially intense week, how restored do you feel?",
+      "description": "Slider question: 1 = drained, 5 = energized.",
+      "type": "slider",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "defaultValue": 3,
+      "labelLow": "Drained",
+      "labelHigh": "Energized",
+      "weightsByValue": {
+        "1": { "I": 2 },
+        "2": { "I": 1 },
+        "3": { "I": 1, "E": 1 },
+        "4": { "E": 1 },
+        "5": { "E": 2 }
+      }
+    },
+    {
+      "id": "p7",
+      "prompt": "Which description feels closer?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "p7_a",
+          "label": "I prefer proven methods and realistic steps.",
+          "weights": { "S": 2 }
+        },
+        {
+          "id": "p7_b",
+          "label": "I enjoy experimentation and conceptual leaps.",
+          "weights": { "N": 2 }
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "prompt": "In team conflict, your first instinct is...",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "p8_a",
+          "label": "Clarify facts and define a rational path.",
+          "weights": { "T": 2 }
+        },
+        {
+          "id": "p8_b",
+          "label": "Read emotions and repair trust first.",
+          "weights": { "F": 2 }
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "prompt": "Your planning preference is...",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "p9_a",
+          "label": "Structured milestones and clear commitments.",
+          "weights": { "J": 2 }
+        },
+        {
+          "id": "p9_b",
+          "label": "Responsive improvisation based on new inputs.",
+          "weights": { "P": 2 }
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "model": "dimension-sum",
+    "dimensions": ["E", "I", "S", "N", "T", "F", "J", "P"],
+    "resultMapping": {
+      "type": "paired-code",
+      "pairs": [
+        { "label": "Energy", "left": "E", "right": "I", "tieBreaker": "I" },
+        { "label": "Focus", "left": "S", "right": "N", "tieBreaker": "N" },
+        { "label": "Decisions", "left": "T", "right": "F", "tieBreaker": "F" },
+        { "label": "Structure", "left": "J", "right": "P", "tieBreaker": "J" }
+      ],
+      "codes": {
+        "ISTJ": { "title": "ISTJ", "summary": "Methodical and dependable. You value clear standards and execution." },
+        "ISFJ": { "title": "ISFJ", "summary": "Supportive and steady. You balance detail with practical care for people." },
+        "INFJ": { "title": "INFJ", "summary": "Insightful and principled. You connect long-range vision with human meaning." },
+        "INTJ": { "title": "INTJ", "summary": "Strategic and independent. You optimize systems for future impact." },
+        "ISTP": { "title": "ISTP", "summary": "Calm and adaptive. You solve real-world problems with efficient action." },
+        "ISFP": { "title": "ISFP", "summary": "Grounded and expressive. You seek authenticity and tangible harmony." },
+        "INFP": { "title": "INFP", "summary": "Reflective and value-driven. You prioritize purpose and inner alignment." },
+        "INTP": { "title": "INTP", "summary": "Analytical and curious. You enjoy conceptual depth and intellectual precision." },
+        "ESTP": { "title": "ESTP", "summary": "Bold and pragmatic. You read situations quickly and move decisively." },
+        "ESFP": { "title": "ESFP", "summary": "Engaging and spontaneous. You energize environments and focus on experience." },
+        "ENFP": { "title": "ENFP", "summary": "Creative and people-oriented. You connect ideas and inspire momentum." },
+        "ENTP": { "title": "ENTP", "summary": "Inventive and strategic. You challenge assumptions and explore options." },
+        "ESTJ": { "title": "ESTJ", "summary": "Organized and direct. You bring structure, clarity, and follow-through." },
+        "ESFJ": { "title": "ESFJ", "summary": "Collaborative and dependable. You keep groups connected and coordinated." },
+        "ENFJ": {
+          "title": "ENFJ",
+          "summary": "Guiding and empathetic. You lead through relationships and shared growth.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "You show people-focused leadership with balanced traits from neighboring styles."
+            },
+            {
+              "minConfidence": 0.4,
+              "text": "Your pattern strongly points to relational leadership and values-based decision making."
+            }
+          ]
+        },
+        "ENTJ": { "title": "ENTJ", "summary": "Decisive and goal-driven. You align people and systems toward high standards." }
+      },
+      "fallback": {
+        "title": "Balanced Axis Mix",
+        "summary": "Your responses indicate a blended type with near-even axis scores.",
+        "details": "You may adapt style by context. Consider retaking in another mood or setting."
+      }
+    }
+  },
+  "shareCard": {
+    "titleTemplate": "{{quizTitle}}",
+    "subtitleTemplate": "Type: {{resultTitle}} ({{confidencePercent}}% confidence)",
+    "footerTemplate": "{{resultSummary}}",
+    "accent": "#1f9f8b"
+  }
+}

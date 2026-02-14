@@ -1,0 +1,304 @@
+{
+  "id": "hogwarts-house",
+  "title": "Hogwarts House Match",
+  "description": "Discover the house traits you naturally lean toward in study, friendship, and challenge.",
+  "durationEstimate": "4-6 minutes",
+  "questions": [
+    {
+      "id": "h1",
+      "prompt": "A difficult exam is coming. What is your first move?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h1_a",
+          "label": "Challenge myself with the hardest material first.",
+          "weights": { "gryffindor": 2, "ravenclaw": 1 }
+        },
+        {
+          "id": "h1_b",
+          "label": "Create a strict revision plan and follow it carefully.",
+          "weights": { "slytherin": 2, "ravenclaw": 1 }
+        },
+        {
+          "id": "h1_c",
+          "label": "Find a study group and support everyone.",
+          "weights": { "hufflepuff": 2, "gryffindor": 1 }
+        },
+        {
+          "id": "h1_d",
+          "label": "Research beyond the syllabus to master the topic.",
+          "weights": { "ravenclaw": 2, "slytherin": 1 }
+        }
+      ]
+    },
+    {
+      "id": "h2",
+      "prompt": "A friend is being treated unfairly. You...",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h2_a",
+          "label": "Step in immediately, even if it causes friction.",
+          "weights": { "gryffindor": 2, "hufflepuff": 1 }
+        },
+        {
+          "id": "h2_b",
+          "label": "Gather facts first and then act with precision.",
+          "weights": { "ravenclaw": 2, "slytherin": 1 }
+        },
+        {
+          "id": "h2_c",
+          "label": "Talk privately and protect their emotional safety.",
+          "weights": { "hufflepuff": 2, "ravenclaw": 1 }
+        },
+        {
+          "id": "h2_d",
+          "label": "Use influence and strategy to shift the outcome.",
+          "weights": { "slytherin": 2, "gryffindor": 1 }
+        }
+      ]
+    },
+    {
+      "id": "h3",
+      "prompt": "Which magical class sounds most exciting?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h3_a",
+          "label": "Defense Against the Dark Arts",
+          "weights": { "gryffindor": 2, "slytherin": 1 }
+        },
+        {
+          "id": "h3_b",
+          "label": "Potions",
+          "weights": { "slytherin": 2, "ravenclaw": 1 }
+        },
+        {
+          "id": "h3_c",
+          "label": "Herbology",
+          "weights": { "hufflepuff": 2, "ravenclaw": 1 }
+        },
+        {
+          "id": "h3_d",
+          "label": "Ancient Runes",
+          "weights": { "ravenclaw": 2, "hufflepuff": 1 }
+        }
+      ]
+    },
+    {
+      "id": "h4",
+      "prompt": "Pick a trait you want people to remember about you.",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h4_a",
+          "label": "Bravery",
+          "weights": { "gryffindor": 2 }
+        },
+        {
+          "id": "h4_b",
+          "label": "Loyalty",
+          "weights": { "hufflepuff": 2 }
+        },
+        {
+          "id": "h4_c",
+          "label": "Wisdom",
+          "weights": { "ravenclaw": 2 }
+        },
+        {
+          "id": "h4_d",
+          "label": "Ambition",
+          "weights": { "slytherin": 2 }
+        }
+      ]
+    },
+    {
+      "id": "h5",
+      "prompt": "A hidden corridor opens. What do you do?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h5_a",
+          "label": "Explore it now before anyone else.",
+          "weights": { "gryffindor": 2, "slytherin": 1 }
+        },
+        {
+          "id": "h5_b",
+          "label": "Document clues and decode its purpose.",
+          "weights": { "ravenclaw": 2, "slytherin": 1 }
+        },
+        {
+          "id": "h5_c",
+          "label": "Invite trusted friends to investigate safely.",
+          "weights": { "hufflepuff": 2, "gryffindor": 1 }
+        },
+        {
+          "id": "h5_d",
+          "label": "Consider how it could give an advantage later.",
+          "weights": { "slytherin": 2, "ravenclaw": 1 }
+        }
+      ]
+    },
+    {
+      "id": "h6",
+      "prompt": "When leading a team, your style is...",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h6_a",
+          "label": "Lead from the front and inspire action.",
+          "weights": { "gryffindor": 2 }
+        },
+        {
+          "id": "h6_b",
+          "label": "Keep everyone included and motivated.",
+          "weights": { "hufflepuff": 2 }
+        },
+        {
+          "id": "h6_c",
+          "label": "Build systems and smart decision paths.",
+          "weights": { "ravenclaw": 2 }
+        },
+        {
+          "id": "h6_d",
+          "label": "Set goals, delegate hard, and push outcomes.",
+          "weights": { "slytherin": 2 }
+        }
+      ]
+    },
+    {
+      "id": "h7",
+      "prompt": "Pick the magical creature you connect with most.",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h7_a",
+          "label": "Phoenix",
+          "weights": { "gryffindor": 2, "ravenclaw": 1 }
+        },
+        {
+          "id": "h7_b",
+          "label": "Badger",
+          "weights": { "hufflepuff": 2 }
+        },
+        {
+          "id": "h7_c",
+          "label": "Owl",
+          "weights": { "ravenclaw": 2 }
+        },
+        {
+          "id": "h7_d",
+          "label": "Serpent",
+          "weights": { "slytherin": 2 }
+        }
+      ]
+    },
+    {
+      "id": "h8",
+      "prompt": "What motivates you most?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "h8_a",
+          "label": "Courage to face the impossible",
+          "weights": { "gryffindor": 2 }
+        },
+        {
+          "id": "h8_b",
+          "label": "Belonging and trust",
+          "weights": { "hufflepuff": 2 }
+        },
+        {
+          "id": "h8_c",
+          "label": "Understanding how things work",
+          "weights": { "ravenclaw": 2 }
+        },
+        {
+          "id": "h8_d",
+          "label": "Rising to the top",
+          "weights": { "slytherin": 2 }
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "model": "dimension-sum",
+    "dimensions": ["gryffindor", "hufflepuff", "ravenclaw", "slytherin"],
+    "resultMapping": {
+      "type": "top-dimension",
+      "items": {
+        "gryffindor": {
+          "title": "Gryffindor",
+          "summary": "Bold, action-oriented, and willing to take risks for what matters.",
+          "details": "You move toward challenge and often become the spark that gets others moving.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "Your profile shows courageous instincts with room to flex other house traits."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A strong Gryffindor signal: you consistently prioritize bravery and direct action."
+            }
+          ]
+        },
+        "hufflepuff": {
+          "title": "Hufflepuff",
+          "summary": "Grounded, loyal, and committed to fairness and steady effort.",
+          "details": "You build trust over time and focus on people as much as outcomes.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "Your answers suggest collaborative values and dependable follow-through."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A clear Hufflepuff signal: you consistently center loyalty, patience, and care."
+            }
+          ]
+        },
+        "ravenclaw": {
+          "title": "Ravenclaw",
+          "summary": "Curious, analytical, and energized by learning and ideas.",
+          "details": "You tend to solve problems through insight, patterns, and thoughtful strategy.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "Your profile leans intellectual with balanced strengths in other areas."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A strong Ravenclaw signal: you repeatedly choose depth, reflection, and discovery."
+            }
+          ]
+        },
+        "slytherin": {
+          "title": "Slytherin",
+          "summary": "Strategic, ambitious, and focused on influence and results.",
+          "details": "You think in terms of leverage, outcomes, and long-game positioning.",
+          "copyBlocks": [
+            {
+              "minConfidence": 0,
+              "text": "Your profile shows practical ambition and tactical awareness."
+            },
+            {
+              "minConfidence": 0.35,
+              "text": "A clear Slytherin signal: you consistently optimize for impact and advancement."
+            }
+          ]
+        }
+      },
+      "fallback": {
+        "title": "Balanced House Mix",
+        "summary": "Your answers are spread across multiple house strengths.",
+        "details": "Retake later to see how context shifts your profile."
+      }
+    }
+  },
+  "shareCard": {
+    "titleTemplate": "{{quizTitle}}",
+    "subtitleTemplate": "Result: {{resultTitle}} ({{confidencePercent}}% confidence)",
+    "footerTemplate": "{{resultSummary}}",
+    "accent": "#2168e5"
+  }
+}
