@@ -2,6 +2,18 @@
 
 Static GitHub Pages project with a client-only Self Discovery platform.
 
+## Languages
+
+The Discover section now supports:
+
+- English
+- Korean
+- Spanish
+- Chinese
+- Japanese
+
+Use the language selector in `/discover/` (saved in localStorage).
+
 ## Run locally
 
 1. Open `/Users/dawoonlee/Documents/Github/selfDiscovery/index.html` in a browser, then go to `./discover/`.
